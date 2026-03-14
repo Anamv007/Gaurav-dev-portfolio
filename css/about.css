@@ -1,0 +1,210 @@
+/* =========================================
+   ABOUT PAGE
+   ========================================= */
+
+/* ── Hero Split ── */
+.about-hero {
+  display: flex;
+  gap: 5rem;
+  align-items: flex-start;
+  padding-top: calc(var(--nav-h) + 4rem);
+}
+
+.about-hero__left {
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: sticky;
+  top: calc(var(--nav-h) + 2rem);
+}
+
+.about-hero__right { flex: 1; }
+
+/* ── Avatar ── */
+.avatar-wrap {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,200,255,0.2), rgba(0,80,255,0.3));
+  border: 2px solid var(--neon);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s var(--transition), box-shadow 0.4s;
+}
+.avatar:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 40px rgba(0,200,255,0.4);
+}
+.avatar__inner {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--neon);
+  text-shadow: 0 0 20px rgba(0,200,255,0.7);
+}
+
+.avatar__ring {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,200,255,0.25);
+  animation: ringPulse 3s ease-in-out infinite;
+}
+.avatar__ring--2 {
+  inset: -22px;
+  border-color: rgba(0,200,255,0.12);
+  animation-delay: -1.5s;
+}
+@keyframes ringPulse {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.04); opacity: 0.5; }
+}
+
+/* ── Info Card ── */
+.info-card {
+  width: 100%;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.info-row__icon { font-size: 1.1rem; margin-top: 2px; }
+.info-row__label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.info-row__value {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-top: 0.1rem;
+}
+
+/* ── Bio ── */
+.about__bio {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--neon), #0066ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* ── Timeline ── */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--neon), rgba(0,200,255,0.1));
+}
+.timeline__item {
+  position: relative;
+  padding-bottom: 2rem;
+}
+.timeline__marker {
+  position: absolute;
+  left: -28px;
+  top: 20px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--neon);
+  box-shadow: var(--neon-glow);
+  border: 2px solid var(--bg-0);
+}
+.timeline__content {
+  padding: 1.5rem;
+}
+.timeline__year {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+.timeline__title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.timeline__desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* ── Achievements Grid ── */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.achieve-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.achieve-card__icon {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+.achieve-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+}
+.achieve-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .about-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-hero__left { position: static; flex: none; }
+  .about__chips { justify-content: center; }
+  .about-hero__right .btn { display: none; }
+}
