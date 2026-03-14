@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/about.css" />
+</head>
+
+<body>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <canvas id="particle-canvas"></canvas>
+
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">&lt;GK /&gt;</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <button class="theme-toggle" aria-label="Toggle theme"></button>
+      <div class="nav__burger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="page-wrapper">
+    <section class="section about-hero">
+      <div class="about-hero__left reveal">
+        <!-- Profile Avatar -->
+        <div class="avatar-wrap">
+          <div class="avatar">
+            <img src="gaurav.jpg" alt="Your Name" class="avatar__img" />
+          </div>
+          <div class="avatar__ring"></div>
+          <div class="avatar__ring avatar__ring--2"></div>
+        </div>
+
+        <!-- Quick Info Card -->
+        <div class="info-card glass-card">
+          <div class="info-row">
+            <span class="info-row__icon">🎓</span>
+            <div>
+              <p class="info-row__label">Education</p>
+              <p class="info-row__value">BCA, Manipal Univ. Jaipur</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-row__icon">💼</span>
+            <div>
+              <p class="info-row__label">Status</p>
+              <p class="info-row__value">Student + Working Professional</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-row__icon">📍</span>
+            <div>
+              <p class="info-row__label">Location</p>
+              <p class="info-row__value">India</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-row__icon">✉️</span>
+            <div>
+              <p class="info-row__label">Email</p>
+              <p class="info-row__value">workpaisagaurav@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-hero__right">
+        <p class="section__label reveal">About Me</p>
+        <h1 class="section__title reveal reveal-delay-1">Turning ideas into<br><span
+            class="highlight">pixel-perfect</span> reality.</h1>
+        <p class="about__bio reveal reveal-delay-2">
+          I'm a BCA 2nd semester student at Manipal University Jaipur, simultaneously navigating a full-time
+          professional role. By day I'm in consultancy; by night (and weekends) I'm building interfaces, learning
+          frameworks, and obsessing over CSS transitions.
+        </p>
+        <p class="about__bio reveal reveal-delay-3">
+          My focus right now is sharpening my front-end fundamentals — from responsive layouts and accessibility to
+          React component architecture. I believe great UI/UX is where logic meets art.
+        </p>
+
+        <div class="about__chips reveal reveal-delay-3">
+          <span class="chip">Open to Internships</span>
+          <span class="chip">UI/UX Enthusiast</span>
+          <span class="chip">Dark Themed ✦</span>
+          <span class="chip">Always Learning</span>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary reveal reveal-delay-4"
+          style="margin-top:2rem;display:inline-flex;">
+          <span>Let's Connect</span><span>→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ── Education Timeline ── -->
+    <section class="section">
+      <p class="section__label reveal">Education & Journey</p>
+      <h2 class="section__title reveal reveal-delay-1">Timeline</h2>
+
+      <div class="timeline">
+        <div class="timeline__item reveal">
+          <div class="timeline__marker"></div>
+          <div class="timeline__content glass-card">
+            <span class="timeline__year chip">2025–Present</span>
+            <h3 class="timeline__title">BCA — Manipal University Jaipur</h3>
+            <p class="timeline__desc">Bachelor of Computer Applications, 1st Semester. Coursework: C Programming, Web
+              Programming, Fundamentals of Computers, Mathematics.</p>
+          </div>
+        </div>
+        <div class="timeline__item reveal reveal-delay-1">
+          <div class="timeline__marker"></div>
+          <div class="timeline__content glass-card">
+            <span class="timeline__year chip">2024–Present</span>
+            <h3 class="timeline__title">Working Professional</h3>
+            <p class="timeline__desc">Consultancy / sales role while pursuing education simultaneously. Managing dual
+              commitments sharpened time management and discipline.</p>
+          </div>
+        </div>
+        <div class="timeline__item reveal reveal-delay-2">
+          <div class="timeline__marker"></div>
+          <div class="timeline__content glass-card">
+            <span class="timeline__year chip">2024</span>
+            <h3 class="timeline__title">Full Stack Diploma</h3>
+            <p class="timeline__desc">Completed a 1-year front-end web development diploma. Built foundational skills in
+              HTML, CSS, and JavaScript.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Achievements ── -->
+    <section class="section">
+      <p class="section__label reveal">Highlights</p>
+      <h2 class="section__title reveal reveal-delay-1">Achievements</h2>
+
+      <div class="achievements-grid">
+        <div class="achieve-card glass-card reveal">
+          <div class="achieve-card__icon">🚀</div>
+          <h3>Projects Completed</h3>
+          <p>Built multiple real-world web projects including CONFESS — a full-stack anonymous confession platform.</p>
+        </div>
+        <div class="achieve-card glass-card reveal reveal-delay-1">
+          <div class="achieve-card__icon">🎨</div>
+          <h3>UI/UX Design</h3>
+          <p>Proficient in Figma and Canva. Passionate about design systems and creating cohesive visual identities.</p>
+        </div>
+        <div class="achieve-card glass-card reveal reveal-delay-2">
+          <div class="achieve-card__icon">⚡</div>
+          <h3>Modern Frameworks</h3>
+          <p>Actively learning React and Tailwind CSS while exploring Node.js backend development.</p>
+        </div>
+        <div class="achieve-card glass-card reveal reveal-delay-3">
+          <div class="achieve-card__icon">📱</div>
+          <h3>Content Creator</h3>
+          <p>Runs a dark/horror-themed Instagram page with scripted short video content — blending creativity with
+            storytelling.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 Gaurav Kumar. Built with ❤️ and caffeine.</span>
+      <div class="footer__socials">
+      <a href="https://github.com/Anamv007/" aria-label="GitHub">GH</a>
+      <a href="https://www.linkedin.com/in/gaurav-kumar-1295933b7/" aria-label="LinkedIn">LI</a>
+      <a href="https://www.instagram.com/1minutenightmaress/" aria-label="Instagram">IG</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

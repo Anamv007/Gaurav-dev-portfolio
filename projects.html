@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<canvas id="particle-canvas"></canvas>
+
+<nav class="nav">
+  <a href="index.html" class="nav__logo">&lt;GK /&gt;</a>
+  <ul class="nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+    <div class="nav__burger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+<section class="section projects-header">
+  <p class="section__label reveal">My Work</p>
+  <h1 class="section__title reveal reveal-delay-1">Selected <span class="highlight-text">Projects</span></h1>
+  <p class="section__sub reveal reveal-delay-2">A collection of things I've built — ranging from full-stack apps to polished front-end experiments.</p>
+
+  <!-- Filter Chips -->
+  <div class="filter-chips reveal reveal-delay-3">
+    <button class="filter-chip active" data-filter="all">All</button>
+    <button class="filter-chip" data-filter="html">HTML/CSS</button>
+    <button class="filter-chip" data-filter="js">JavaScript</button>
+    <button class="filter-chip" data-filter="react">React</button>
+    <button class="filter-chip" data-filter="node">Node.js</button>
+  </div>
+</section>
+
+<!-- ── Project Grid ── -->
+<section class="section projects-grid-section">
+  <div class="projects-grid" id="projects-grid">
+
+    <!-- CONFESS -->
+    <div class="project-card glass-card reveal" data-tags="node js html" data-index="0">
+      <div class="project-card__preview">
+        <div class="project-card__mockup confess-mockup">
+          <div class="mock-header">
+            <span class="mock-dot red"></span>
+            <span class="mock-dot yellow"></span>
+            <span class="mock-dot green"></span>
+            <span class="mock-title">CONFESS</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-post">
+              <span class="mock-alias">Shadow #4821</span>
+              <p>I've been pretending to be okay for so long…</p>
+              <div class="mock-reactions">💀 24 &nbsp; 🩸 18</div>
+            </div>
+            <div class="mock-post mock-post--dim">
+              <span class="mock-alias">Void #0912</span>
+              <p>Sometimes the silence is louder than words…</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card__info">
+        <div class="project-card__meta">
+          <h3 class="project-card__title">CONFESS</h3>
+          <div class="project-card__tags">
+            <span class="chip">Node.js</span>
+            <span class="chip">MongoDB</span>
+            <span class="chip">Express</span>
+            <span class="chip">Vanilla JS</span>
+          </div>
+        </div>
+        <p class="project-card__desc">Anonymous confession platform with dark gothic UI, auto-generated aliases, profanity filtering, reactions, and moderation.</p>
+        <div class="project-card__actions">
+          <a href="#" class="btn btn-primary btn--sm"><span>Live Demo</span></a>
+          <a href="#" class="btn btn-outline btn--sm">GitHub →</a>
+          <button class="btn-icon" onclick="openModal(0)" aria-label="More info">⤢</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Landing Page -->
+    <div class="project-card glass-card reveal reveal-delay-1" data-tags="html js" data-index="1">
+      <div class="project-card__preview">
+        <div class="project-card__mockup landing-mockup">
+          <div class="mock-nav-bar">
+            <span>Logo</span>
+            <div class="mock-nav-items"><span></span><span></span><span></span></div>
+          </div>
+          <div class="mock-hero-block">
+            <div class="mock-hero-text"></div>
+            <div class="mock-hero-text mock-hero-text--sm"></div>
+            <div class="mock-cta-btn"></div>
+          </div>
+          <div class="mock-cards-row">
+            <div class="mock-mini-card"></div>
+            <div class="mock-mini-card"></div>
+            <div class="mock-mini-card"></div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card__info">
+        <div class="project-card__meta">
+          <h3 class="project-card__title">Product Landing Page</h3>
+          <div class="project-card__tags">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+          </div>
+        </div>
+        <p class="project-card__desc">Responsive product landing page with smooth scroll animations, sticky navigation, and interactive pricing section.</p>
+        <div class="project-card__actions">
+          <a href="#" class="btn btn-primary btn--sm"><span>Live Demo</span></a>
+          <a href="#" class="btn btn-outline btn--sm">GitHub →</a>
+          <button class="btn-icon" onclick="openModal(1)" aria-label="More info">⤢</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- React Dashboard -->
+    <div class="project-card glass-card reveal reveal-delay-2" data-tags="react js" data-index="2">
+      <div class="project-card__preview">
+        <div class="project-card__mockup dashboard-mockup">
+          <div class="dash-sidebar">
+            <div class="dash-menu-item active"></div>
+            <div class="dash-menu-item"></div>
+            <div class="dash-menu-item"></div>
+            <div class="dash-menu-item"></div>
+          </div>
+          <div class="dash-content">
+            <div class="dash-stats-row">
+              <div class="dash-stat-card"></div>
+              <div class="dash-stat-card"></div>
+              <div class="dash-stat-card"></div>
+            </div>
+            <div class="dash-chart"></div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card__info">
+        <div class="project-card__meta">
+          <h3 class="project-card__title">React Dashboard UI</h3>
+          <div class="project-card__tags">
+            <span class="chip">React</span>
+            <span class="chip">Tailwind</span>
+            <span class="chip">Chart.js</span>
+          </div>
+        </div>
+        <p class="project-card__desc">Admin dashboard with data visualization, responsive sidebar, and dark mode. Built as a learning project for React state management.</p>
+        <div class="project-card__actions">
+          <a href="#" class="btn btn-primary btn--sm"><span>Live Demo</span></a>
+          <a href="#" class="btn btn-outline btn--sm">GitHub →</a>
+          <button class="btn-icon" onclick="openModal(2)" aria-label="More info">⤢</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio Website -->
+    <div class="project-card glass-card reveal reveal-delay-1" data-tags="html js" data-index="3">
+      <div class="project-card__preview">
+        <div class="project-card__mockup portfolio-mockup">
+          <div class="pm-circle"></div>
+          <div class="pm-lines">
+            <div></div><div></div><div></div>
+          </div>
+          <div class="pm-btns">
+            <div class="pm-btn"></div>
+            <div class="pm-btn pm-btn--outline"></div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card__info">
+        <div class="project-card__meta">
+          <h3 class="project-card__title">This Portfolio</h3>
+          <div class="project-card__tags">
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3</span>
+            <span class="chip">JavaScript</span>
+          </div>
+        </div>
+        <p class="project-card__desc">The very portfolio you're looking at — multi-page, glassmorphism design, particle background, theme toggle, and scroll animations.</p>
+        <div class="project-card__actions">
+          <a href="index.html" class="btn btn-primary btn--sm"><span>You're Here!</span></a>
+          <a href="#" class="btn btn-outline btn--sm">GitHub →</a>
+          <button class="btn-icon" onclick="openModal(3)" aria-label="More info">⤢</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /projects-grid -->
+</section>
+
+<!-- ── Modal ── -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+  <div class="modal glass-card" id="modal" onclick="event.stopPropagation()">
+    <button class="modal__close" onclick="closeModal()">✕</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>© 2026 Gaurav Kumar. Built with ❤️ and caffeine.</span>
+  <div class="footer__socials">
+   <a href="https://github.com/Anamv007/" aria-label="GitHub">GH</a>
+      <a href="https://www.linkedin.com/in/gaurav-kumar-1295933b7/" aria-label="LinkedIn">LI</a>
+      <a href="https://www.instagram.com/1minutenightmaress/" aria-label="Instagram">IG</a>
+  </div>
+</footer>
+</div><!-- /page-wrapper -->
+
+<script src="js/main.js"></script>
+<script src="js/projects.js"></script>
+</body>
+</html>

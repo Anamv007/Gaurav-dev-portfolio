@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills — Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/skills.css" />
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<canvas id="particle-canvas"></canvas>
+
+<nav class="nav">
+  <a href="index.html" class="nav__logo">&lt;GK /&gt;</a>
+  <ul class="nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+    <div class="nav__burger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+<!-- ── Hero ── -->
+<section class="section skills-header">
+  <p class="section__label reveal">My Toolkit</p>
+  <h1 class="section__title reveal reveal-delay-1">Skills &amp; <span class="glow-text">Technologies</span></h1>
+  <p class="section__sub reveal reveal-delay-2">A snapshot of where I am right now — constantly learning, constantly improving.</p>
+</section>
+
+<!-- ── Skill Bars ── -->
+<section class="section skills-bars-section">
+  <div class="skills-bars-grid">
+    <!-- Left: Core Frontend -->
+    <div class="skills-column reveal">
+      <h2 class="skills-column__title">Core Front-End</h2>
+      <div class="skill-bars">
+
+        <div class="skill-bar" data-level="90">
+          <div class="skill-bar__header">
+            <span class="skill-bar__name">HTML5</span>
+            <span class="skill-bar__pct">90%</span>
+          </div>
+          <div class="skill-bar__track">
+            <div class="skill-bar__fill" style="--target: 90%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar" data-level="85">
+          <div class="skill-bar__header">
+            <span class="skill-bar__name">CSS3 / SCSS</span>
+            <span class="skill-bar__pct">85%</span>
+          </div>
+          <div class="skill-bar__track">
+            <div class="skill-bar__fill" style="--target: 85%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar" data-level="80">
+          <div class="skill-bar__header">
+            <span class="skill-bar__name">JavaScript (ES6+)</span>
+            <span class="skill-bar__pct">80%</span>
+          </div>
+          <div class="skill-bar__track">
+            <div class="skill-bar__fill" style="--target: 80%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar" data-level="75">
+          <div class="skill-bar__header">
+            <span class="skill-bar__name">React.js</span>
+            <span class="skill-bar__pct">75%</span>
+          </div>
+          <div class="skill-bar__track">
+            <div class="skill-bar__fill" style="--target: 75%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar" data-level="70">
+          <div class="skill-bar__header">
+            <span class="skill-bar__name">Tailwind CSS</span>
+            <span class="skill-bar__pct">70%</span>
+          </div>
+          <div class="skill-bar__track">
+            <div class="skill-bar__fill" style="--target: 70%"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right: Backend + Tools -->
+    <div class="skills-column reveal reveal-delay-2">
+      <h2 class="skills-column__title">Backend &amp; Tools</h2>
+      <div class="skill-bars">
+
+        <div class="skill-bar" data-level="55">
+          <div class="skill-bar__header">
+            <span class="skill-bar__name">Node.js / Express</span>
+            <span class="skill-bar__pct">55%</span>
+          </div>
+          <div class="skill-bar__track">
+            <div class="skill-bar__fill" style="--target: 55%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar" data-level="50">
+          <div class="skill-bar__header">
+            <span class="skill-bar__name">MongoDB</span>
+            <span class="skill-bar__pct">50%</span>
+          </div>
+          <div class="skill-bar__track">
+            <div class="skill-bar__fill" style="--target: 50%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar" data-level="65">
+          <div class="skill-bar__header">
+            <span class="skill-bar__name">Git / GitHub</span>
+            <span class="skill-bar__pct">65%</span>
+          </div>
+          <div class="skill-bar__track">
+            <div class="skill-bar__fill" style="--target: 65%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar" data-level="70">
+          <div class="skill-bar__header">
+            <span class="skill-bar__name">Figma / UI Design</span>
+            <span class="skill-bar__pct">70%</span>
+          </div>
+          <div class="skill-bar__track">
+            <div class="skill-bar__fill" style="--target: 70%"></div>
+          </div>
+        </div>
+
+        <div class="skill-bar" data-level="40">
+          <div class="skill-bar__header">
+            <span class="skill-bar__name">Cloud / Deployment</span>
+            <span class="skill-bar__pct">40%</span>
+          </div>
+          <div class="skill-bar__track">
+            <div class="skill-bar__fill" style="--target: 40%"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Tech Icon Grid ── -->
+<section class="section">
+  <p class="section__label reveal">Technologies I Use</p>
+  <h2 class="section__title reveal reveal-delay-1">My Stack</h2>
+  <div class="tech-grid">
+    <div class="tech-item glass-card reveal" style="--delay:0.05s">
+      <div class="tech-item__icon html-icon">⬡</div>
+      <span>HTML5</span>
+    </div>
+    <div class="tech-item glass-card reveal" style="--delay:0.1s">
+      <div class="tech-item__icon css-icon">◈</div>
+      <span>CSS3</span>
+    </div>
+    <div class="tech-item glass-card reveal" style="--delay:0.15s">
+      <div class="tech-item__icon js-icon">JS</div>
+      <span>JavaScript</span>
+    </div>
+    <div class="tech-item glass-card reveal" style="--delay:0.2s">
+      <div class="tech-item__icon react-icon">⚛</div>
+      <span>React</span>
+    </div>
+    <div class="tech-item glass-card reveal" style="--delay:0.25s">
+      <div class="tech-item__icon tw-icon">~</div>
+      <span>Tailwind</span>
+    </div>
+    <div class="tech-item glass-card reveal" style="--delay:0.3s">
+      <div class="tech-item__icon node-icon">⬡</div>
+      <span>Node.js</span>
+    </div>
+    <div class="tech-item glass-card reveal" style="--delay:0.35s">
+      <div class="tech-item__icon mongo-icon">◉</div>
+      <span>MongoDB</span>
+    </div>
+    <div class="tech-item glass-card reveal" style="--delay:0.4s">
+      <div class="tech-item__icon git-icon">⑂</div>
+      <span>Git</span>
+    </div>
+    <div class="tech-item glass-card reveal" style="--delay:0.45s">
+      <div class="tech-item__icon figma-icon">◻</div>
+      <span>Figma</span>
+    </div>
+    <div class="tech-item glass-card reveal" style="--delay:0.5s">
+      <div class="tech-item__icon canva-icon">C</div>
+      <span>Canva</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Currently Learning ── -->
+<section class="section learning-section">
+  <p class="section__label reveal">What's Next</p>
+  <h2 class="section__title reveal reveal-delay-1">Currently Learning</h2>
+  <div class="learning-grid">
+    <div class="learn-card glass-card reveal">
+      <div class="learn-card__progress">
+        <svg viewBox="0 0 36 36" class="circular-chart">
+          <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          <path class="circle" stroke-dasharray="40, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          <text x="18" y="20.35" class="percentage">40%</text>
+        </svg>
+      </div>
+      <div>
+        <h3>TypeScript</h3>
+        <p>Type-safe JavaScript — building safer, scalable applications.</p>
+      </div>
+    </div>
+    <div class="learn-card glass-card reveal reveal-delay-1">
+      <div class="learn-card__progress">
+        <svg viewBox="0 0 36 36" class="circular-chart">
+          <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          <path class="circle" stroke-dasharray="30, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          <text x="18" y="20.35" class="percentage">30%</text>
+        </svg>
+      </div>
+      <div>
+        <h3>Next.js</h3>
+        <p>Server-side rendering and full-stack React applications.</p>
+      </div>
+    </div>
+    <div class="learn-card glass-card reveal reveal-delay-2">
+      <div class="learn-card__progress">
+        <svg viewBox="0 0 36 36" class="circular-chart">
+          <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          <path class="circle" stroke-dasharray="20, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+          <text x="18" y="20.35" class="percentage">20%</text>
+        </svg>
+      </div>
+      <div>
+        <h3>Cloud Security</h3>
+        <p>Goal: Cloud Security Engineer with red team / offensive mindset.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <span>© 2026 Gaurav Kumar. Built with ❤️ and caffeine.</span>
+  <div class="footer__socials">
+   <a href="https://github.com/Anamv007/" aria-label="GitHub">GH</a>
+      <a href="https://www.linkedin.com/in/gaurav-kumar-1295933b7/" aria-label="LinkedIn">LI</a>
+      <a href="https://www.instagram.com/1minutenightmaress/" aria-label="Instagram">IG</a>
+  </div>
+</footer>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  // ── Animate skill bars on scroll ──
+  const bars = document.querySelectorAll('.skill-bar__fill');
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.style.getPropertyValue('--target');
+        barObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  bars.forEach(b => barObserver.observe(b));
+
+  // Apply individual reveal delays from CSS custom property
+  document.querySelectorAll('.tech-item').forEach(el => {
+    el.style.transitionDelay = el.style.getPropertyValue('--delay') || '0s';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Front-End Developer</title>
+  <meta name="description" content="Front-End Developer Portfolio — Crafting modern web experiences" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+<!-- ── Decorative Orbs ── -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<!-- ── Particle Canvas ── -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- ── Navigation ── -->
+<nav class="nav">
+  <a href="index.html" class="nav__logo">&lt;GK /&gt;</a>
+  <ul class="nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <button class="theme-toggle" aria-label="Toggle theme"></button>
+    <div class="nav__burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero Section ── -->
+<div class="page-wrapper">
+  <section class="hero">
+    <div class="hero__content">
+      <p class="hero__greeting reveal">👋 Hello, I'm</p>
+      <h1 class="hero__name reveal reveal-delay-1">Gaurav</h1>
+
+      <div class="hero__title-wrap reveal reveal-delay-2">
+        <span class="hero__role">I build&nbsp;</span>
+        <span class="typing-cursor">
+          <span id="typed-text"></span><span class="cursor">|</span>
+        </span>
+      </div>
+
+      <p class="hero__tagline reveal reveal-delay-3">
+        Crafting modern web experiences — from pixel-perfect UIs to<br class="desktop-br"> interactive digital products that people love to use.
+      </p>
+
+      <div class="hero__cta reveal reveal-delay-4">
+        <a href="projects.html" class="btn btn-primary"><span>View Projects</span> <span>→</span></a>
+        <a href="contact.html" class="btn btn-outline">Say Hello</a>
+      </div>
+
+      <div class="hero__stats reveal reveal-delay-4">
+        <div class="stat">
+          <span class="stat__num" data-count="5">0</span><span class="stat__num">+</span>
+          <span class="stat__label">Projects</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__num" data-count="5">0</span><span class="stat__num">+</span>
+          <span class="stat__label">Skills</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__num">BCA</span>
+          <span class="stat__label">2st Sem · MUJ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating card decoration -->
+    <div class="hero__visual reveal reveal-delay-2">
+      <div class="hero-card glass-card">
+        <div class="hero-card__dot"></div>
+        <pre class="hero-card__code"><span class="c-kw">const</span> <span class="c-var">developer</span> = {
+  <span class="c-key">name</span>: <span class="c-str">"Gaurav Kumar"</span>,
+  <span class="c-key">role</span>: <span class="c-str">"Front-End Dev"</span>,
+  <span class="c-key">skills</span>: [<span class="c-str">"HTML"</span>, <span class="c-str">"CSS"</span>,
+    <span class="c-str">"JavaScript"</span>, <span class="c-str">"React"</span>],
+  <span class="c-key">passion</span>: <span class="c-str">"Building cool stuff"</span>,
+  <span class="c-key">status</span>: <span class="c-str">"Open to work 🚀"</span>
+};</pre>
+      </div>
+
+      <div class="badge-float badge-float--html glass-card">HTML5</div>
+      <div class="badge-float badge-float--css glass-card">CSS3</div>
+      <div class="badge-float badge-float--js glass-card">JS</div>
+      <div class="badge-float badge-float--react glass-card">React</div>
+    </div>
+  </section>
+
+  <!-- ── Scroll indicator ── -->
+  <div class="scroll-indicator">
+    <div class="scroll-indicator__line"></div>
+    <span>Scroll</span>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <span>© 2026 Gaurav Kumar. Built with ❤️ and caffeine.</span>
+    <div class="footer__socials">
+      <a href="https://github.com/Anamv007/" aria-label="GitHub">GH</a>
+      <a href="https://www.linkedin.com/in/gaurav-kumar-1295933b7/" aria-label="LinkedIn">LI</a>
+      <a href="https://www.instagram.com/1minutenightmaress/" aria-label="Instagram">IG</a>
+    </div>
+  </footer>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  // ── Typing Effect ──
+  const words = ['HTML.', 'CSS.', 'JavaScript.', 'React.', 'Tailwind.'];
+  let wIdx = 0, cIdx = 0, deleting = false;
+  const el = document.getElementById('typed-text');
+
+  function type() {
+    const word = words[wIdx];
+    if (!deleting) {
+      el.textContent = word.slice(0, ++cIdx);
+      if (cIdx === word.length) { deleting = true; return setTimeout(type, 1800); }
+    } else {
+      el.textContent = word.slice(0, --cIdx);
+      if (cIdx === 0) { deleting = false; wIdx = (wIdx + 1) % words.length; }
+    }
+    setTimeout(type, deleting ? 60 : 100);
+  }
+  type();
+
+  // ── Counter Animation ──
+  function animateCounters() {
+    document.querySelectorAll('.stat__num[data-count]').forEach(el => {
+      const target = +el.dataset.count;
+      let cur = 0;
+      const step = () => {
+        cur += Math.ceil(target / 30);
+        if (cur >= target) { el.textContent = target; return; }
+        el.textContent = cur;
+        requestAnimationFrame(step);
+      };
+      step();
+    });
+  }
+  // Trigger once hero is visible
+  setTimeout(animateCounters, 600);
+</script>
+</body>
+</html>
