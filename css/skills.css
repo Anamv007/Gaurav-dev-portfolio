@@ -1,0 +1,183 @@
+/* =========================================
+   SKILLS PAGE
+   ========================================= */
+
+.skills-header { padding-bottom: 0; padding-top: calc(var(--nav-h) + 4rem); }
+
+.glow-text {
+  color: var(--neon);
+  text-shadow: 0 0 20px rgba(0,200,255,0.5);
+}
+
+/* ── Skill Bars Grid ── */
+.skills-bars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+@media (max-width: 768px) { .skills-bars-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+.skills-column__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.skill-bars { display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* Individual Bar */
+.skill-bar__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.skill-bar__name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.skill-bar__pct {
+  font-size: 0.8rem;
+  color: var(--neon);
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+.skill-bar__track {
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50px;
+  overflow: hidden;
+}
+.skill-bar__fill {
+  height: 100%;
+  width: 0; /* starts at 0, animated by JS */
+  background: linear-gradient(90deg, var(--neon), #0066ff);
+  border-radius: 50px;
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 0 8px rgba(0,200,255,0.5);
+  position: relative;
+}
+.skill-bar__fill::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 10px; height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--neon);
+  opacity: 0;
+  transition: opacity 0.3s 1s;
+}
+/* Show dot after animation */
+.skill-bar__fill[style*="width"]:not([style*="width: 0"])::after { opacity: 1; }
+
+/* ── Tech Icon Grid ── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+}
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.5rem 1rem;
+  cursor: default;
+  transition: transform 0.35s var(--transition), box-shadow 0.35s var(--transition), border-color 0.35s;
+}
+.tech-item:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 16px 40px rgba(0,200,255,0.15);
+  border-color: rgba(0,200,255,0.4);
+}
+.tech-item span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+/* Icon colors */
+.tech-item__icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  font-weight: 900;
+  transition: all 0.3s;
+}
+.html-icon  { background: rgba(228,77,38,0.15);  color: #e44d26; }
+.css-icon   { background: rgba(21,114,182,0.15); color: #1572b6; }
+.js-icon    { background: rgba(247,223,30,0.15); color: #f7df1e; font-size: 0.85rem; font-family: var(--font-display); }
+.react-icon { background: rgba(97,218,251,0.15); color: #61dafb; font-size: 1.5rem; }
+.tw-icon    { background: rgba(56,189,248,0.15); color: #38bdf8; font-size: 1.5rem; font-weight: 300; }
+.node-icon  { background: rgba(104,160,99,0.15); color: #68a063; }
+.mongo-icon { background: rgba(71,162,72,0.15);  color: #47a248; }
+.git-icon   { background: rgba(240,80,50,0.15);  color: #f05032; font-size: 1.5rem; }
+.figma-icon { background: rgba(162,89,255,0.15); color: #a259ff; }
+.canva-icon { background: rgba(0,200,180,0.15);  color: #00c4b4; font-family: var(--font-display); font-size: 1.1rem; }
+
+.tech-item:hover .tech-item__icon { filter: brightness(1.3); }
+
+/* ── Circular Progress (Learning) ── */
+.learning-section { padding-top: 0; }
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.learn-card {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.learn-card__progress { flex: 0 0 70px; }
+.learn-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.learn-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.circular-chart { width: 70px; height: 70px; }
+.circle-bg {
+  fill: none;
+  stroke: rgba(255,255,255,0.06);
+  stroke-width: 3;
+}
+.circle {
+  fill: none;
+  stroke: var(--neon);
+  stroke-width: 3;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 3px rgba(0,200,255,0.5));
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+.percentage {
+  fill: var(--neon);
+  font-size: 9px;
+  font-weight: 700;
+  text-anchor: middle;
+  font-family: var(--font-display);
+}
+
+@media (max-width: 600px) {
+  .tech-grid { grid-template-columns: repeat(5, 1fr); }
+  .tech-item { padding: 1rem 0.5rem; }
+}
