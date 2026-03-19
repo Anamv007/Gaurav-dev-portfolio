@@ -3,313 +3,304 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Cart — UrbanKart</title>
-  <meta name="description" content="Review your UrbanKart cart and proceed to checkout. COD available." />
+  <title>Your Cart — UrbanKart</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/shop.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>" />
 </head>
 <body>
 
-<div class="announcement-bar">
-  🎉 Use code <strong>SMART10</strong> for extra 10% OFF! Free delivery on orders above ₹499
+<div class="announcement-bar">🎉 <strong>SALE:</strong> Up to 57% OFF &nbsp;|&nbsp; COD Available &nbsp;|&nbsp; Free Delivery ₹499+ &nbsp;|&nbsp; <a href="products.html">Keep Shopping →</a></div>
+
+<div class="trust-strip">
+  <div class="trust-strip__inner">
+    <span class="trust-strip__item">✅ <span>Cash on Delivery</span></span>
+    <span class="trust-strip__item">🚚 <span>Free Delivery ₹499+</span></span>
+    <span class="trust-strip__item">↩️ <span>7-Day Returns</span></span>
+    <span class="trust-strip__item">🛡️ <span>1-Year Warranty</span></span>
+    <span class="trust-strip__item">✅ <span>Cash on Delivery</span></span>
+    <span class="trust-strip__item">🚚 <span>Free Delivery ₹499+</span></span>
+    <span class="trust-strip__item">↩️ <span>7-Day Returns</span></span>
+    <span class="trust-strip__item">🛡️ <span>1-Year Warranty</span></span>
+  </div>
 </div>
 
 <nav class="nav">
   <div class="nav__inner">
-    <a href="index.html" class="nav__logo">
-      <div class="nav__logo-icon">🏠</div>
-      Urban<span>Kart</span>
-    </a>
+    <a href="index.html" class="nav__logo"><div class="nav__logo-icon">🏠</div>Urban<span>Kart</span></a>
     <ul class="nav__links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="products.html">Shop</a></li>
+      <li><a href="products.html">Shop All</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav__actions">
-      <a href="cart.html" class="nav__cart-btn">
-        🛒 Cart <span class="cart-badge" style="display:none">0</span>
-      </a>
-      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="nav__icon-btn" data-search-open>🔍</button>
+      <a href="cart.html" class="nav__cart-btn" style="background:var(--primary);">🛒 Cart <span class="cart-badge" style="display:none">0</span></a>
+      <button class="nav__burger"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
 
-<div class="section-sm">
+<div class="page-hero">
   <div class="container">
-
-    <nav class="breadcrumb" style="margin-bottom:1.5rem;">
-      <a href="index.html">Home</a>
-      <span class="breadcrumb__sep">›</span>
-      <span>My Cart</span>
-    </nav>
-
-    <h1 style="font-size:clamp(1.6rem,3vw,2rem);margin-bottom:1.5rem;">My Cart <span id="cart-count-head" style="font-size:1rem;color:var(--gray-500);font-weight:400;"></span></h1>
-
-    <!-- Empty cart -->
-    <div class="empty-cart" id="empty-cart" style="display:none;">
-      <div class="empty-cart__icon">🛒</div>
-      <h2 class="empty-cart__title">Your cart is empty</h2>
-      <p class="empty-cart__sub">Looks like you haven't added anything yet. Explore our smart home gadgets!</p>
-      <a href="products.html" class="btn btn-primary btn-lg">Start Shopping →</a>
-    </div>
-
-    <!-- Cart layout -->
-    <div class="cart-layout" id="cart-layout" style="display:none;">
-      <!-- Cart Items -->
-      <div>
-        <div id="cart-items"></div>
-
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:1rem 0;flex-wrap:wrap;gap:.75rem;">
-          <a href="products.html" class="btn btn-ghost btn-sm">← Continue Shopping</a>
-          <button onclick="clearAllItems()" class="btn btn-sm" style="color:var(--danger);background:none;border:1px solid var(--danger);">🗑 Clear Cart</button>
-        </div>
-
-        <!-- Trust row -->
-        <div style="background:var(--gray-50);border-radius:var(--radius);padding:1.25rem;display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:.5rem;">
-          <div style="display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--gray-700);">✅ COD Available</div>
-          <div style="display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--gray-700);">🚚 Free Delivery</div>
-          <div style="display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--gray-700);">↩️ 7-Day Returns</div>
-          <div style="display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--gray-700);">🛡️ 1 Year Warranty</div>
-        </div>
-      </div>
-
-      <!-- Order Summary -->
-      <div>
-        <div class="order-summary">
-          <div class="order-summary__title">Order Summary</div>
-
-          <!-- Coupon -->
-          <div class="coupon-row">
-            <input type="text" id="couponInput" class="form-input" placeholder="Enter coupon code" />
-            <button class="btn btn-outline btn-sm" onclick="applyCoupon()">Apply</button>
-          </div>
-          <p id="coupon-result" style="font-size:.8rem;margin-bottom:.75rem;display:none;"></p>
-
-          <div class="summary-row"><span>Subtotal</span><span id="subtotal-val">₹0</span></div>
-          <div class="summary-row savings" id="savings-row" style="display:none;"><span>You Save 🎉</span><span id="savings-val"></span></div>
-          <div class="summary-row" id="discount-row" style="display:none;"><span>Coupon Discount</span><span id="discount-val" style="color:var(--success);"></span></div>
-          <div class="summary-row"><span>Delivery Charges</span><span id="delivery-val" style="color:var(--success);">FREE</span></div>
-          <div class="summary-row total"><span>Total</span><span id="total-val">₹0</span></div>
-
-          <a href="checkout.html" class="btn btn-secondary btn-lg btn-full" style="margin-top:1rem;">
-            Proceed to Checkout →
-          </a>
-          <div style="text-align:center;margin-top:.75rem;">
-            <div class="cod-badge" style="justify-content:center;">
-              <span>💵</span><span>Cash on Delivery Available</span>
-            </div>
-          </div>
-          <div class="secure-badge">🔒 100% Secure Checkout &nbsp;|&nbsp; SSL Encrypted</div>
-        </div>
-
-        <!-- Promo box -->
-        <div style="background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:var(--radius);padding:1.25rem;margin-top:1rem;">
-          <p style="font-weight:700;color:#92400e;margin-bottom:.25rem;">🎁 Almost there!</p>
-          <p id="free-delivery-msg" style="font-size:.875rem;color:#78350f;"></p>
-        </div>
-      </div>
-    </div>
-
+    <h1>Your Cart 🛒</h1>
+    <p id="cart-hero-sub">Review your items before checkout</p>
   </div>
 </div>
 
-<!-- Frequently bought together -->
-<section style="padding:2.5rem 0;background:var(--gray-50);" id="reco-section" style="display:none;">
+<section class="section-sm">
   <div class="container">
-    <div class="section-header">
-      <h3>Customers Also Bought</h3>
-      <a href="products.html" class="btn btn-outline btn-sm">View All →</a>
+
+    <!-- Empty Cart -->
+    <div id="cart-empty" style="display:none;" class="empty-state">
+      <div class="empty-state__icon">🛒</div>
+      <h3>Your cart is empty</h3>
+      <p>Looks like you haven't added anything yet. Browse our smart home gadgets!</p>
+      <a href="products.html" class="btn btn-primary" style="margin-top:1rem;">Browse Products →</a>
     </div>
-    <div class="products-grid" id="reco-grid"></div>
+
+    <!-- Cart with items -->
+    <div id="cart-content" style="display:none;">
+      <div class="cart-layout">
+        <!-- Left: items -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              🛒 Cart Items &nbsp;<span id="cart-item-count" style="font-size:.8rem;font-weight:600;color:var(--gray-500);"></span>
+            </div>
+            <div class="card-body" style="padding:0;">
+              <table class="cart-table" style="width:100%;border-collapse:collapse;" id="cart-table">
+                <thead>
+                  <tr>
+                    <th colspan="2" style="text-align:left;">Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody id="cart-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Coupon -->
+          <div class="card" style="margin-top:1rem;">
+            <div class="card-header">🏷️ Have a Coupon?</div>
+            <div class="card-body">
+              <div class="coupon-form">
+                <input class="form-input" id="coupon-input" placeholder="Enter coupon code (try WELCOME10)" />
+                <button class="btn btn-outline" onclick="applyCoupon()">Apply</button>
+              </div>
+              <div id="coupon-msg" style="margin-top:.5rem;font-size:.82rem;"></div>
+            </div>
+          </div>
+
+          <div style="margin-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;">
+            <a href="products.html" class="btn btn-ghost btn-sm">← Continue Shopping</a>
+            <button class="btn btn-ghost btn-sm" onclick="clearCartAll()" style="color:var(--danger);border-color:var(--danger);">🗑 Clear Cart</button>
+          </div>
+        </div>
+
+        <!-- Right: summary -->
+        <div>
+          <div class="order-summary">
+            <div class="order-summary__title">Order Summary</div>
+            <div class="order-summary__row">
+              <span>Subtotal (<span id="summary-count">0</span> items)</span>
+              <span id="summary-subtotal">₹0</span>
+            </div>
+            <div class="order-summary__row">
+              <span>Delivery</span>
+              <span id="summary-delivery" style="color:var(--success);font-weight:700;">FREE</span>
+            </div>
+            <div class="order-summary__row" id="discount-row" style="display:none;">
+              <span>Coupon Discount</span>
+              <span id="summary-discount" style="color:var(--success);font-weight:700;"></span>
+            </div>
+            <div class="order-summary__row total">
+              <span>Total (incl. GST)</span>
+              <span id="summary-total">₹0</span>
+            </div>
+            <div class="order-summary__saving" id="saving-box" style="margin-top:.75rem;display:none;">
+              🎉 You're saving <strong id="saving-amount"></strong> on this order!
+            </div>
+            <a href="checkout.html" class="btn btn-accent btn-full btn-lg" id="checkout-btn" style="margin-top:1.25rem;">
+              Proceed to Checkout →
+            </a>
+            <div style="text-align:center;margin-top:.75rem;">
+              <span style="font-size:.78rem;color:var(--gray-500);">✅ COD Available &nbsp;|&nbsp; 🔒 Secure Checkout</span>
+            </div>
+
+            <!-- Trust signals -->
+            <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--gray-100);">
+              <div style="font-size:.78rem;color:var(--gray-500);display:flex;flex-direction:column;gap:.35rem;">
+                <span>🚚 Free delivery on orders above ₹499</span>
+                <span>↩️ 7-day hassle-free returns</span>
+                <span>🛡️ 1-year warranty on all products</span>
+                <span>🏛️ GST invoice included</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment methods -->
+          <div class="card" style="margin-top:1rem;">
+            <div class="card-body" style="padding:.85rem 1rem;">
+              <div style="font-size:.78rem;font-weight:700;color:var(--gray-500);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.07em;">Accepted Payments</div>
+              <div style="display:flex;gap:.4rem;flex-wrap:wrap;">
+                <span class="footer__payment-badge" style="color:var(--dark);border-color:var(--gray-300);">COD</span>
+                <span class="footer__payment-badge" style="color:var(--dark);border-color:var(--gray-300);">UPI</span>
+                <span class="footer__payment-badge" style="color:var(--dark);border-color:var(--gray-300);">VISA</span>
+                <span class="footer__payment-badge" style="color:var(--dark);border-color:var(--gray-300);">MC</span>
+                <span class="footer__payment-badge" style="color:var(--dark);border-color:var(--gray-300);">RAZORPAY</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div>
-        <div class="footer__brand-name">Urban<span>Kart</span></div>
-        <p class="footer__tagline">Smart Homes. Smart Living.</p>
-      </div>
-      <div>
-        <p class="footer__col-title">Quick Links</p>
-        <div class="footer__links">
-          <a href="products.html">All Products</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
-      <div>
-        <p class="footer__col-title">Help</p>
-        <div class="footer__links">
-          <a href="#">Shipping Policy</a>
-          <a href="#">Return Policy</a>
-        </div>
-      </div>
-      <div>
-        <p class="footer__col-title">Contact</p>
-        <div class="footer__contact-item"><span>📞</span><a href="tel:+919876543210" style="color:rgba(255,255,255,.6)">+91-98765-43210</a></div>
-        <div class="footer__contact-item"><span>✉️</span><a href="mailto:hello@urbankart.in" style="color:rgba(255,255,255,.6)">hello@urbankart.in</a></div>
-      </div>
+<div class="search-modal" id="searchModal">
+  <div class="search-modal__box">
+    <div class="search-modal__input-wrap">
+      <input class="search-modal__input" type="search" id="searchInput" placeholder="Search products..." autocomplete="off" />
+      <button class="search-modal__close" id="searchClose">✕</button>
     </div>
-    <div class="footer__bottom">
-      <p class="footer__bottom-text">© 2024 UrbanKart Pvt. Ltd. GST: 06ABCDE1234F1Z5</p>
-    </div>
+    <div class="search-results" id="searchResults"></div>
   </div>
-</footer>
+</div>
 
-<button class="back-to-top" aria-label="Back to top">↑</button>
+<button class="back-to-top">↑</button>
+<a class="whatsapp-float" href="https://wa.me/919820567341" target="_blank" rel="noopener">💬</a>
 
 <script src="js/products-data.js"></script>
 <script src="js/main.js"></script>
 <script>
 'use strict';
 
-let couponDiscount = 0;
+const COUPONS = {
+  WELCOME10: 10,
+  URBAN15:   15,
+  SAVE20:    20,
+  INDIA10:   10,
+};
+let _couponPct = 0;
 
 function renderCart() {
   const cart = getCart();
-  const count = getCartCount();
 
-  document.getElementById('cart-count-head').textContent = count > 0 ? `(${count} item${count > 1 ? 's' : ''})` : '';
-
-  if (cart.length === 0) {
-    document.getElementById('empty-cart').style.display = 'block';
-    document.getElementById('cart-layout').style.display = 'none';
+  if (!cart.length) {
+    document.getElementById('cart-empty').style.display = 'block';
+    document.getElementById('cart-content').style.display = 'none';
+    document.getElementById('cart-hero-sub').textContent = 'Your cart is empty';
     return;
   }
 
-  document.getElementById('empty-cart').style.display = 'none';
-  document.getElementById('cart-layout').style.display = 'grid';
+  document.getElementById('cart-empty').style.display = 'none';
+  document.getElementById('cart-content').style.display = 'block';
+  document.getElementById('cart-hero-sub').textContent = `${getCartCount()} item${getCartCount() !== 1 ? 's' : ''} ready for checkout`;
 
-  /* Render items */
-  document.getElementById('cart-items').innerHTML = cart.map(item => {
-    const product = PRODUCTS.find(p => p.id === item.id);
-    const savings = product ? (product.mrp - product.price) * item.qty : 0;
+  // Cart rows
+  document.getElementById('cart-tbody').innerHTML = cart.map(item => {
+    const itemTotal = item.price * item.qty;
+    const p = getProductById(item.id);
+    const mrp = p ? p.mrp : item.price;
     return `
-    <div class="cart-item" id="cart-item-${item.id}">
-      <div class="cart-item__img">
-        <a href="product.html?id=${item.id}"><img src="${item.image}" alt="${item.name}" /></a>
-      </div>
-      <div>
-        <a href="product.html?id=${item.id}"><p class="cart-item__name">${item.name}</p></a>
-        ${item.variant ? `<p class="cart-item__variant">${item.variant}</p>` : ''}
-        ${product ? `<p style="font-size:.78rem;color:var(--success);font-weight:600;">You save ${formatPrice(savings)}</p>` : ''}
-        <div class="cart-item__actions">
-          <div class="qty-control" style="scale:.9;transform-origin:left;">
-            <button class="qty-btn" onclick="updateItemQty('${item.id}', '${item.variant || ''}', ${item.qty - 1})">−</button>
-            <input type="number" class="qty-input" value="${item.qty}" min="1" max="20"
-              onchange="updateItemQty('${item.id}', '${item.variant || ''}', parseInt(this.value))" />
-            <button class="qty-btn" onclick="updateItemQty('${item.id}', '${item.variant || ''}', ${item.qty + 1})">+</button>
+      <tr>
+        <td style="width:80px;"><a href="product.html?id=${item.id}"><img class="cart-item-img" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}" /></a></td>
+        <td>
+          <a href="product.html?id=${item.id}" class="cart-item-name">${escapeHtml(item.name)}</a>
+          ${item.variant ? `<div class="cart-item-variant">${escapeHtml(item.variant)}</div>` : ''}
+          <div style="font-size:.75rem;color:var(--success);font-weight:600;margin-top:.15rem;">✅ COD Available</div>
+          <button class="cart-remove" onclick="doRemove('${item.id}','${item.variant}')">Remove</button>
+        </td>
+        <td class="cart-price">
+          ${formatPrice(item.price)}
+          ${mrp > item.price ? `<div style="font-size:.72rem;text-decoration:line-through;color:var(--gray-400);">${formatPrice(mrp)}</div>` : ''}
+        </td>
+        <td>
+          <div class="qty-control">
+            <button class="qty-btn" onclick="doQty('${item.id}','${item.variant}',${item.qty - 1})">−</button>
+            <span class="qty-display">${item.qty}</span>
+            <button class="qty-btn" onclick="doQty('${item.id}','${item.variant}',${item.qty + 1})">+</button>
           </div>
-          <button class="cart-item__remove" onclick="removeItem('${item.id}', '${item.variant || ''}')">🗑 Remove</button>
-          <button onclick="showToast('💬 Saved for later!')" style="font-size:.8rem;color:var(--primary);font-weight:500;background:none;border:none;cursor:pointer;">Save for Later</button>
-        </div>
-      </div>
-      <div class="cart-item__price-col">
-        <div class="cart-item__price">${formatPrice(item.price * item.qty)}</div>
-        ${product ? `<div class="cart-item__orig-price">${formatPrice(product.mrp * item.qty)}</div>` : ''}
-      </div>
-    </div>`;
+        </td>
+        <td class="cart-price"><strong>${formatPrice(itemTotal)}</strong></td>
+      </tr>`;
   }).join('');
 
-  updateTotals();
-  renderRecommendations();
+  renderSummary(cart);
 }
 
-function updateTotals() {
-  const cart = getCart();
-  const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
-  const totalMrp = cart.reduce((s, i) => {
-    const p = PRODUCTS.find(pr => pr.id === i.id);
+function renderSummary(cart) {
+  const subtotal  = getCartTotal();
+  const delivery  = subtotal >= 499 ? 0 : 99;
+  const discount  = Math.round(subtotal * _couponPct / 100);
+  const total     = subtotal + delivery - discount;
+
+  const originalTotal = cart.reduce((s, i) => {
+    const p = getProductById(i.id);
     return s + (p ? p.mrp : i.price) * i.qty;
   }, 0);
-  const savings = totalMrp - subtotal;
-  const delivery = subtotal >= 499 ? 0 : 49;
-  const discountAmt = Math.round(subtotal * couponDiscount / 100);
-  const total = subtotal - discountAmt + delivery;
+  const saving = originalTotal - total;
 
-  document.getElementById('subtotal-val').textContent = formatPrice(subtotal);
-  document.getElementById('total-val').textContent = formatPrice(total);
-  document.getElementById('delivery-val').textContent = delivery === 0 ? 'FREE' : formatPrice(delivery);
+  document.getElementById('cart-item-count').textContent = `(${getCartCount()} items)`;
+  document.getElementById('summary-count').textContent   = getCartCount();
+  document.getElementById('summary-subtotal').textContent = formatPrice(subtotal);
+  document.getElementById('summary-delivery').textContent = delivery === 0 ? 'FREE 🎉' : formatPrice(delivery);
 
-  const savingsRow = document.getElementById('savings-row');
-  if (savings > 0) {
-    savingsRow.style.display = 'flex';
-    document.getElementById('savings-val').textContent = formatPrice(savings);
-  }
-
-  const discountRow = document.getElementById('discount-row');
-  if (discountAmt > 0) {
-    discountRow.style.display = 'flex';
-    document.getElementById('discount-val').textContent = `−${formatPrice(discountAmt)}`;
-  }
-
-  const remaining = 499 - subtotal;
-  const fdMsg = document.getElementById('free-delivery-msg');
-  if (remaining > 0 && delivery > 0) {
-    fdMsg.textContent = `Add items worth ${formatPrice(remaining)} more to get FREE delivery!`;
+  const discRow = document.getElementById('discount-row');
+  if (_couponPct > 0) {
+    discRow.style.display = 'flex';
+    document.getElementById('summary-discount').textContent = `−${formatPrice(discount)}`;
   } else {
-    fdMsg.textContent = '🎉 You\'ve qualified for FREE delivery!';
+    discRow.style.display = 'none';
+  }
+
+  document.getElementById('summary-total').textContent = formatPrice(total);
+
+  const savingBox = document.getElementById('saving-box');
+  if (saving > 0) {
+    savingBox.style.display = 'block';
+    document.getElementById('saving-amount').textContent = formatPrice(saving);
+  } else {
+    savingBox.style.display = 'none';
   }
 }
 
-function updateItemQty(id, variant, newQty) {
-  if (newQty < 1) { removeItem(id, variant); return; }
-  updateQty(id, variant, newQty);
-  renderCart();
-}
-
-function removeItem(id, variant) {
+function doRemove(id, variant) {
   removeFromCart(id, variant);
-  showToast('Item removed from cart');
   renderCart();
+  updateCartBadge();
+  showToast('Item removed from cart');
 }
 
-function clearAllItems() {
-  if (confirm('Remove all items from cart?')) {
-    saveCart([]);
-    renderCart();
-  }
+function doQty(id, variant, qty) {
+  updateCartQty(id, variant, qty);
+  renderCart();
+  updateCartBadge();
+}
+
+function clearCartAll() {
+  if (!confirm('Remove all items from your cart?')) return;
+  localStorage.removeItem('uk_cart_v2');
+  renderCart();
+  updateCartBadge();
+  showToast('Cart cleared');
 }
 
 function applyCoupon() {
-  const code = document.getElementById('couponInput').value.trim().toUpperCase();
-  const res = document.getElementById('coupon-result');
-  res.style.display = 'block';
-  if (code === 'SMART10') {
-    couponDiscount = 10;
-    res.style.color = 'var(--success)';
-    res.textContent = '🎉 Coupon SMART10 applied! 10% off on your order.';
-  } else if (code === 'FIRST15') {
-    couponDiscount = 15;
-    res.style.color = 'var(--success)';
-    res.textContent = '🎉 Coupon FIRST15 applied! 15% off on your first order.';
+  const code = (document.getElementById('coupon-input').value || '').trim().toUpperCase();
+  const msg  = document.getElementById('coupon-msg');
+  if (COUPONS[code]) {
+    _couponPct = COUPONS[code];
+    msg.innerHTML = `<span style="color:var(--success);font-weight:700;">✅ Coupon "${code}" applied — ${_couponPct}% off!</span>`;
+    renderSummary(getCart());
+    showToast(`✅ ${_couponPct}% discount applied!`, 'success');
   } else {
-    couponDiscount = 0;
-    res.style.color = 'var(--danger)';
-    res.textContent = '❌ Invalid coupon code. Try SMART10 or FIRST15.';
-  }
-  updateTotals();
-}
-
-function renderRecommendations() {
-  const cartIds = getCart().map(i => i.id);
-  const recos = PRODUCTS.filter(p => !cartIds.includes(p.id) && p.isBestseller).slice(0, 4);
-  if (recos.length) {
-    document.getElementById('reco-section').style.display = 'block';
-    const grid = document.getElementById('reco-grid');
-    grid.innerHTML = recos.map(renderProductCard).join('');
-    grid.querySelectorAll('.product-card__wishlist').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        btn.classList.toggle('wished');
-        btn.textContent = btn.classList.contains('wished') ? '❤️' : '🤍';
-        showToast(btn.classList.contains('wished') ? 'Added to wishlist ❤️' : 'Removed from wishlist');
-      });
-    });
+    msg.innerHTML = `<span style="color:var(--danger);font-weight:700;">❌ Invalid coupon code. Try WELCOME10</span>`;
   }
 }
 
