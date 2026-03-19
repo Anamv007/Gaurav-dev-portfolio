@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — UrbanKart</title>
+  <meta name="description" content="Secure checkout at UrbanKart. COD, UPI, Credit/Debit Card accepted." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/shop.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <div class="nav__logo-icon">🏠</div>
+      Urban<span>Kart</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:.75rem;margin-left:auto;font-size:.85rem;color:var(--gray-500);">
+      <span>🔒 Secure Checkout</span>
+      <span style="background:var(--gray-100);padding:.3rem .6rem;border-radius:4px;font-size:.75rem;">SSL Encrypted</span>
+    </div>
+  </div>
+</nav>
+
+<div class="section-sm">
+  <div class="container">
+    <nav class="breadcrumb" style="margin-bottom:1.5rem;">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb__sep">›</span>
+      <a href="cart.html">Cart</a>
+      <span class="breadcrumb__sep">›</span>
+      <span>Checkout</span>
+    </nav>
+
+    <h1 style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:1.5rem;">Checkout</h1>
+
+    <!-- Empty cart redirect -->
+    <div id="empty-checkout" style="display:none;text-align:center;padding:3rem;">
+      <div style="font-size:3rem;margin-bottom:1rem;">🛒</div>
+      <h2 style="margin-bottom:.75rem;">Your cart is empty</h2>
+      <a href="products.html" class="btn btn-primary">Start Shopping →</a>
+    </div>
+
+    <div class="checkout-layout" id="checkout-layout" style="display:none;">
+      <!-- Left: Form -->
+      <div>
+
+        <!-- Step 1: Contact -->
+        <div class="checkout-section">
+          <h3 class="checkout-section__title">
+            <span class="checkout-section__num">1</span>
+            Contact Information
+          </h3>
+          <div class="form-row-2" style="margin-bottom:1rem;">
+            <div class="form-group">
+              <label class="form-label">First Name *</label>
+              <input type="text" class="form-input" id="firstName" placeholder="Rahul" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name *</label>
+              <input type="text" class="form-input" id="lastName" placeholder="Sharma" required />
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">Mobile Number *</label>
+              <input type="tel" class="form-input" id="phone" placeholder="+91 98765 43210" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" id="email" placeholder="rahul@email.com" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Shipping Address -->
+        <div class="checkout-section">
+          <h3 class="checkout-section__title">
+            <span class="checkout-section__num">2</span>
+            Delivery Address
+          </h3>
+          <div class="form-group" style="margin-bottom:1rem;">
+            <label class="form-label">Full Address (House No., Street, Area) *</label>
+            <textarea class="form-input" id="address" rows="3" placeholder="42, MG Road, Sector 14, Near Metro Station" required></textarea>
+          </div>
+          <div class="form-row-2" style="margin-bottom:1rem;">
+            <div class="form-group">
+              <label class="form-label">City *</label>
+              <input type="text" class="form-input" id="city" placeholder="Gurugram" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">State *</label>
+              <select class="form-input" id="state" required>
+                <option value="">Select State</option>
+                <option>Andhra Pradesh</option><option>Assam</option><option>Bihar</option>
+                <option>Chandigarh (UT)</option><option>Chhattisgarh</option><option>Delhi (NCT)</option>
+                <option>Goa</option><option>Gujarat</option><option>Haryana</option>
+                <option>Himachal Pradesh</option><option>Jharkhand</option><option>Karnataka</option>
+                <option>Kerala</option><option>Madhya Pradesh</option><option>Maharashtra</option>
+                <option>Manipur</option><option>Meghalaya</option><option>Mizoram</option>
+                <option>Nagaland</option><option>Odisha</option><option>Punjab</option>
+                <option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option>
+                <option>Telangana</option><option>Tripura</option><option>Uttar Pradesh</option>
+                <option>Uttarakhand</option><option>West Bengal</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label">PIN Code *</label>
+              <input type="text" class="form-input" id="pincode" placeholder="122002" maxlength="6" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Landmark (Optional)</label>
+              <input type="text" class="form-input" id="landmark" placeholder="Near Reliance Fresh" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Payment -->
+        <div class="checkout-section">
+          <h3 class="checkout-section__title">
+            <span class="checkout-section__num">3</span>
+            Payment Method
+          </h3>
+          <div class="payment-methods">
+            <div class="payment-method selected" onclick="selectPayment('cod', this)">
+              <input type="radio" name="payment" value="cod" checked />
+              <div>
+                <div class="payment-method__label">💵 Cash on Delivery (COD)</div>
+                <div class="payment-method__sub">Pay with cash when your order arrives. Most popular!</div>
+              </div>
+            </div>
+            <div class="payment-method" onclick="selectPayment('upi', this)">
+              <input type="radio" name="payment" value="upi" />
+              <div>
+                <div class="payment-method__label">📱 UPI / PhonePe / GPay</div>
+                <div class="payment-method__sub">Instant payment via any UPI app. 5% extra cashback!</div>
+              </div>
+              <div id="upi-field" style="display:none;width:100%;margin-top:.75rem;">
+                <input type="text" class="form-input" placeholder="Enter UPI ID (e.g. rahul@upi)" />
+              </div>
+            </div>
+            <div class="payment-method" onclick="selectPayment('card', this)">
+              <input type="radio" name="payment" value="card" />
+              <div>
+                <div class="payment-method__label">💳 Credit / Debit Card</div>
+                <div class="payment-method__sub">All major cards accepted. EMI available on orders ₹3,000+.</div>
+              </div>
+            </div>
+            <div class="payment-method" onclick="selectPayment('netbanking', this)">
+              <input type="radio" name="payment" value="netbanking" />
+              <div>
+                <div class="payment-method__label">🏦 Net Banking</div>
+                <div class="payment-method__sub">Powered by Razorpay. Supports all major Indian banks.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Notes -->
+        <div class="checkout-section">
+          <h3 class="checkout-section__title" style="font-size:.95rem;border-bottom:none;">
+            📝 Order Notes (Optional)
+          </h3>
+          <textarea class="form-input" id="orderNotes" rows="2" placeholder="Any specific delivery instructions? (e.g. call before delivery, leave with security)"></textarea>
+        </div>
+
+        <button class="btn btn-secondary btn-lg btn-full" style="font-size:1.1rem;" onclick="placeOrder()">
+          🛒 Place Order Securely →
+        </button>
+        <div class="secure-badge" style="margin-top:.75rem;">
+          🔒 256-bit SSL Encrypted &nbsp;|&nbsp; Your data is completely safe
+        </div>
+
+      </div>
+
+      <!-- Right: Summary -->
+      <div>
+        <div class="order-summary">
+          <div class="order-summary__title">Order Summary</div>
+          <div id="checkout-items"></div>
+          <hr style="border:none;border-top:1px solid var(--gray-100);margin:1rem 0;" />
+          <div class="summary-row"><span>Subtotal</span><span id="co-subtotal">₹0</span></div>
+          <div class="summary-row savings" id="co-savings-row" style="display:none;"><span>Total Savings 🎉</span><span id="co-savings">₹0</span></div>
+          <div class="summary-row"><span>Delivery</span><span id="co-delivery" style="color:var(--success);">FREE</span></div>
+          <div class="summary-row total"><span>Total Payable</span><span id="co-total">₹0</span></div>
+          <p style="font-size:.75rem;color:var(--gray-500);margin-top:.5rem;">Inclusive of all taxes. GST invoice will be sent to your email.</p>
+        </div>
+
+        <!-- Trust signals -->
+        <div style="background:white;border:1px solid var(--gray-100);border-radius:var(--radius);padding:1.25rem;margin-top:1rem;">
+          <h4 style="font-size:.875rem;margin-bottom:.75rem;color:var(--dark);">🛡️ Why shop with UrbanKart?</h4>
+          <div style="display:flex;flex-direction:column;gap:.5rem;">
+            <div style="font-size:.82rem;color:var(--gray-700);display:flex;gap:.4rem;"><span>✅</span><span>Genuine products with manufacturer warranty</span></div>
+            <div style="font-size:.82rem;color:var(--gray-700);display:flex;gap:.4rem;"><span>🚚</span><span>Fast delivery in 3–7 business days</span></div>
+            <div style="font-size:.82rem;color:var(--gray-700);display:flex;gap:.4rem;"><span>↩️</span><span>7-day hassle-free returns</span></div>
+            <div style="font-size:.82rem;color:var(--gray-700);display:flex;gap:.4rem;"><span>📞</span><span>WhatsApp support 7 days a week</span></div>
+            <div style="font-size:.82rem;color:var(--gray-700);display:flex;gap:.4rem;"><span>📄</span><span>GST invoice for every order</span></div>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:1rem;">
+          <p style="font-size:.75rem;color:var(--gray-500);">Secure payments by</p>
+          <div style="display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.35rem;">
+            <span class="payment-icon" style="background:var(--gray-100);color:var(--gray-700);">Razorpay</span>
+            <span class="payment-icon" style="background:var(--gray-100);color:var(--gray-700);">UPI</span>
+            <span class="payment-icon" style="background:var(--gray-100);color:var(--gray-700);">VISA</span>
+            <span class="payment-icon" style="background:var(--gray-100);color:var(--gray-700);">MC</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Order Success Modal -->
+<div id="successModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;display:none;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;border-radius:20px;padding:2.5rem;max-width:480px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3);">
+    <div style="font-size:4rem;margin-bottom:1rem;">🎉</div>
+    <h2 style="color:var(--success);margin-bottom:.5rem;">Order Placed Successfully!</h2>
+    <p style="color:var(--gray-600);margin-bottom:1rem;">Your order has been confirmed. You'll receive an SMS and WhatsApp update within 30 minutes.</p>
+    <div style="background:var(--gray-50);border-radius:var(--radius);padding:1rem;margin-bottom:1.5rem;text-align:left;">
+      <div style="display:flex;justify-content:space-between;font-size:.875rem;margin-bottom:.4rem;"><span style="color:var(--gray-500);">Order ID:</span><strong id="order-id" style="color:var(--dark);">#UK-000001</strong></div>
+      <div style="display:flex;justify-content:space-between;font-size:.875rem;margin-bottom:.4rem;"><span style="color:var(--gray-500);">Est. Delivery:</span><strong style="color:var(--dark);">3–7 Business Days</strong></div>
+      <div style="display:flex;justify-content:space-between;font-size:.875rem;"><span style="color:var(--gray-500);">Payment:</span><strong id="order-payment" style="color:var(--dark);">Cash on Delivery</strong></div>
+    </div>
+    <a href="index.html" class="btn btn-primary btn-full">Continue Shopping →</a>
+    <p style="font-size:.78rem;color:var(--gray-400);margin-top:.75rem;">Need help? WhatsApp us: +91-98765-43210</p>
+  </div>
+</div>
+
+<script src="js/products-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+'use strict';
+
+function selectPayment(method, el) {
+  document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+  el.classList.add('selected');
+  el.querySelector('input[type="radio"]').checked = true;
+  document.getElementById('upi-field').style.display = method === 'upi' ? 'block' : 'none';
+}
+
+function renderCheckoutSummary() {
+  const cart = getCart();
+  if (cart.length === 0) {
+    document.getElementById('empty-checkout').style.display = 'block';
+    document.getElementById('checkout-layout').style.display = 'none';
+    return;
+  }
+  document.getElementById('empty-checkout').style.display = 'none';
+  document.getElementById('checkout-layout').style.display = 'grid';
+
+  /* Items */
+  document.getElementById('checkout-items').innerHTML = cart.map(item => `
+    <div class="checkout-summary-item">
+      <div class="checkout-summary-img"><img src="${item.image}" alt="${item.name}" /></div>
+      <div>
+        <div class="checkout-summary-name">${item.name}</div>
+        <div class="checkout-summary-qty">Qty: ${item.qty}</div>
+      </div>
+      <div class="checkout-summary-price">${formatPrice(item.price * item.qty)}</div>
+    </div>
+  `).join('');
+
+  /* Totals */
+  const subtotal = getCartTotal();
+  const totalMrp = cart.reduce((s, i) => {
+    const p = PRODUCTS.find(pr => pr.id === i.id);
+    return s + (p ? p.mrp : i.price) * i.qty;
+  }, 0);
+  const savings = totalMrp - subtotal;
+  const delivery = subtotal >= 499 ? 0 : 49;
+  const total = subtotal + delivery;
+
+  document.getElementById('co-subtotal').textContent = formatPrice(subtotal);
+  document.getElementById('co-total').textContent = formatPrice(total);
+  document.getElementById('co-delivery').textContent = delivery === 0 ? 'FREE' : formatPrice(delivery);
+  if (savings > 0) {
+    document.getElementById('co-savings-row').style.display = 'flex';
+    document.getElementById('co-savings').textContent = formatPrice(savings);
+  }
+}
+
+function placeOrder() {
+  /* Validate required fields */
+  const required = ['firstName', 'lastName', 'phone', 'address', 'city', 'state', 'pincode'];
+  let valid = true;
+  required.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el.value.trim()) {
+      el.style.borderColor = 'var(--danger)';
+      el.addEventListener('input', () => el.style.borderColor = '', { once: true });
+      valid = false;
+    }
+  });
+
+  if (!valid) {
+    showToast('⚠️ Please fill in all required fields.');
+    document.getElementById('firstName').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  /* Validate phone */
+  const phone = document.getElementById('phone').value.trim();
+  if (phone.replace(/\D/g, '').length < 10) {
+    showToast('⚠️ Please enter a valid mobile number.');
+    return;
+  }
+
+  /* Validate pincode */
+  const pin = document.getElementById('pincode').value.trim();
+  if (pin.length !== 6 || isNaN(pin)) {
+    showToast('⚠️ Please enter a valid 6-digit PIN code.');
+    return;
+  }
+
+  /* Show loading state */
+  const btn = event.target;
+  btn.textContent = '⏳ Placing Order…';
+  btn.disabled = true;
+
+  /* Simulate order placement */
+  setTimeout(() => {
+    const orderId = '#UK-' + Math.random().toString(36).substr(2, 8).toUpperCase();
+    const payment = document.querySelector('input[name="payment"]:checked')?.value || 'cod';
+    const paymentLabels = { cod: 'Cash on Delivery', upi: 'UPI', card: 'Credit/Debit Card', netbanking: 'Net Banking' };
+
+    document.getElementById('order-id').textContent = orderId;
+    document.getElementById('order-payment').textContent = paymentLabels[payment] || 'Cash on Delivery';
+
+    /* Clear cart */
+    saveCart([]);
+
+    /* Show success modal */
+    const modal = document.getElementById('successModal');
+    modal.style.display = 'flex';
+
+    btn.textContent = '🛒 Place Order Securely →';
+    btn.disabled = false;
+  }, 1800);
+}
+
+document.addEventListener('DOMContentLoaded', renderCheckoutSummary);
+</script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Product — UrbanKart</title>
+  <meta name="description" id="page-desc" content="Buy smart home gadgets with COD, free delivery and 1-year warranty at UrbanKart." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/shop.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>" />
+</head>
+<body>
+
+<div class="announcement-bar">
+  Use code <strong>SMART10</strong> for extra 10% OFF on orders above ₹2,000 &nbsp;|&nbsp; <a href="products.html">Shop More →</a>
+</div>
+
+<div class="trust-strip">
+  <div class="trust-strip__inner">
+    <span class="trust-item"><span>✅</span><span>COD Available</span></span>
+    <span class="trust-item"><span>🚚</span><span>Free Delivery ₹499+</span></span>
+    <span class="trust-item"><span>↩️</span><span>7-Day Returns</span></span>
+    <span class="trust-item"><span>🛡️</span><span>1 Year Warranty</span></span>
+    <span class="trust-item"><span>✅</span><span>COD Available</span></span>
+    <span class="trust-item"><span>🚚</span><span>Free Delivery ₹499+</span></span>
+    <span class="trust-item"><span>↩️</span><span>7-Day Returns</span></span>
+    <span class="trust-item"><span>🛡️</span><span>1 Year Warranty</span></span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <div class="nav__logo-icon">🏠</div>
+      Urban<span>Kart</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="cart.html" class="nav__cart-btn">
+        🛒 Cart <span class="cart-badge" style="display:none">0</span>
+      </a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Product Content -->
+<div class="section-sm">
+  <div class="container">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" style="margin-bottom:1.5rem;" id="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb__sep">›</span>
+      <a href="products.html">Shop</a>
+      <span class="breadcrumb__sep">›</span>
+      <span id="bc-name">Product</span>
+    </nav>
+
+    <div class="product-detail" id="product-detail">
+      <!-- Filled by JS -->
+    </div>
+
+    <!-- Tabs -->
+    <div class="product-tabs" id="product-tabs" style="display:none;">
+      <div class="product-tab-nav">
+        <button class="product-tab-btn active" onclick="switchTab('desc', this)">Description</button>
+        <button class="product-tab-btn" onclick="switchTab('specs', this)">Specifications</button>
+        <button class="product-tab-btn" onclick="switchTab('reviews', this)">Reviews</button>
+      </div>
+      <div class="product-tab-content active" id="tab-desc">
+        <h3 style="margin-bottom:1rem;" id="tab-desc-problem"></h3>
+        <p style="color:var(--gray-700);margin-bottom:1.5rem;font-size:1.05rem;" id="tab-desc-solution"></p>
+        <h4 style="margin-bottom:1rem;">What you get:</h4>
+        <div class="product-features" id="tab-features"></div>
+      </div>
+      <div class="product-tab-content" id="tab-specs">
+        <table class="spec-table" id="spec-table"></table>
+      </div>
+      <div class="product-tab-content" id="tab-reviews">
+        <div id="reviews-content"></div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <div style="margin-top:3rem;" id="related-wrap" style="display:none;">
+      <div class="section-header">
+        <h3>You May Also Like</h3>
+        <a href="products.html" class="btn btn-outline btn-sm">View All →</a>
+      </div>
+      <div class="products-grid" id="related-grid"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">Urban<span>Kart</span></div>
+        <p class="footer__tagline">Smart Homes. Smart Living.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link">📸</a>
+          <a href="#" class="footer__social-link">▶️</a>
+          <a href="#" class="footer__social-link">💬</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Quick Links</p>
+        <div class="footer__links">
+          <a href="index.html">Home</a>
+          <a href="products.html">All Products</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Help</p>
+        <div class="footer__links">
+          <a href="#">Shipping Policy</a>
+          <a href="#">Return Policy</a>
+          <a href="#">Track Order</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Contact</p>
+        <div class="footer__contact-item"><span>📞</span><a href="tel:+919876543210" style="color:rgba(255,255,255,.6)">+91-98765-43210</a></div>
+        <div class="footer__contact-item"><span>✉️</span><a href="mailto:hello@urbankart.in" style="color:rgba(255,255,255,.6)">hello@urbankart.in</a></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__bottom-text">© 2024 UrbanKart Pvt. Ltd. GST: 06ABCDE1234F1Z5</p>
+      <div class="footer__payments">
+        <span class="payment-icon">COD</span><span class="payment-icon">UPI</span><span class="payment-icon">Razorpay</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="js/products-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+'use strict';
+
+const REVIEWS_DATA = {
+  p001: [
+    { name:'Rohit Sharma', city:'Delhi', rating:5, title:'Completely transformed my room!', text:'Installed these in my bedroom and the difference is night and day. Setup took 10 minutes. The music sync mode is insane — lights literally dance with the music. App is smooth and never disconnects.', date:'2 weeks ago', img:'R', imgs:[] },
+    { name:'Anjali Mehta', city:'Pune', rating:5, title:'Best purchase of 2024', text:'Bought for my son\'s study room. He loves it! The white light mode is perfect for studying and the colourful modes are great for gaming. Delivery was quick too — got it in 3 days.', date:'1 month ago', img:'A', imgs:[] },
+    { name:'Vikram Singh', city:'Chandigarh', rating:4, title:'Great quality, minor app issue', text:'The strip quality and brightness are excellent. Had a minor issue with the app dropping connection but a router restart fixed it. Overall very happy — would recommend.', date:'3 weeks ago', img:'V', imgs:[] },
+  ],
+  p002: [
+    { name:'Priya Nair', city:'Bengaluru', rating:5, title:'Crystal clear night vision!', text:'The 2K resolution is genuinely impressive. I can read vehicle number plates at night from my first-floor camera. Setup was very easy and WhatsApp alerts work instantly.', date:'1 month ago', img:'P', imgs:[] },
+    { name:'Suresh Kumar', city:'Chennai', rating:5, title:'Perfect for Indian conditions', text:'Been using for 3 months through hot summer and monsoon. Zero issues. The IP66 rating is real — survived heavy rain. App is clean and two-way audio is crystal clear.', date:'2 months ago', img:'S', imgs:[] },
+    { name:'Meera Pillai', city:'Kochi', rating:4, title:'Very good camera, easy setup', text:'Took 20 minutes to set up including mounting. Night vision is excellent. The AI motion detection doesn\'t give false alarms from trees or traffic which I was worried about.', date:'3 weeks ago', img:'M', imgs:[] },
+  ],
+};
+
+const SAMPLE_REVIEWS = [
+  { name:'Aditya Joshi', city:'Mumbai', rating:5, title:'Excellent product!', text:'Received exactly as described. Quality is top notch. Delivery was on time and packaging was great. Definitely buying again.', date:'2 weeks ago', img:'A', imgs:[] },
+  { name:'Deepa Reddy', city:'Hyderabad', rating:4, title:'Good value for money', text:'Works perfectly as advertised. Setup was simple. COD was available which was great. Minor packaging issue but product itself is fine.', date:'1 month ago', img:'D', imgs:[] },
+];
+
+function switchTab(tab, btn) {
+  document.querySelectorAll('.product-tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.product-tab-content').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+}
+
+function setMainImage(src) {
+  document.getElementById('galleryMain').src = src;
+  document.querySelectorAll('.gallery-thumb').forEach(t => {
+    t.classList.toggle('active', t.querySelector('img')?.src === src || t.dataset.src === src);
+  });
+}
+
+function renderRatingBars(avg, total) {
+  const dist = { 5: 68, 4: 20, 3: 7, 2: 3, 1: 2 };
+  return [5,4,3,2,1].map(s => `
+    <div class="review-bar-row">
+      <span class="review-bar-label">${s} ★</span>
+      <div class="review-bar"><div class="review-bar__fill" style="width:${dist[s]}%"></div></div>
+      <span class="review-bar-pct">${dist[s]}%</span>
+    </div>`).join('');
+}
+
+function renderReviewCard(r) {
+  return `
+    <div class="review-card">
+      <div class="review-card__header">
+        <div class="review-card__user">
+          <div class="review-card__avatar">${r.img}</div>
+          <div>
+            <div class="review-card__name">${r.name}</div>
+            <div class="review-card__date">📍 ${r.city} · ${r.date}</div>
+            <div class="review-card__verified-badge">✅ Verified Purchase</div>
+          </div>
+        </div>
+        <div class="stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
+      </div>
+      <div class="review-card__body">
+        <div class="review-card__title">${r.title}</div>
+        <p>${r.text}</p>
+      </div>
+    </div>`;
+}
+
+function loadProduct() {
+  const id = new URLSearchParams(location.search).get('id');
+  const product = PRODUCTS.find(p => p.id === id) || PRODUCTS[0];
+
+  /* Page meta */
+  document.getElementById('page-title').textContent = `${product.name} — UrbanKart`;
+  document.getElementById('page-desc').setAttribute('content', product.description);
+  document.getElementById('bc-name').textContent = product.shortName;
+
+  const lowStockBadge = product.lowStock
+    ? `<span class="product-info__stock low-stock">⚡ Only ${product.stock} left in stock!</span>`
+    : `<span class="product-info__stock in-stock">✅ In Stock</span>`;
+
+  const thumbs = product.images.map((img, i) => `
+    <div class="gallery-thumb ${i===0?'active':''}" data-src="${img}" onclick="setMainImage('${img}', this)">
+      <img src="${img}" alt="View ${i+1}" loading="lazy" />
+    </div>`).join('');
+
+  document.getElementById('product-detail').innerHTML = `
+    <!-- Gallery -->
+    <div class="product-gallery">
+      <div class="gallery-main">
+        <img id="galleryMain" src="${product.images[0]}" alt="${product.name}" />
+        <div class="gallery-badge-sale">${product.discount}% OFF</div>
+      </div>
+      <div class="gallery-thumbs">${thumbs}</div>
+    </div>
+
+    <!-- Info Panel -->
+    <div class="product-info">
+      <span class="tag">${product.category}</span>
+      <h1 class="product-info__title" style="margin-top:.75rem;">${product.name}</h1>
+
+      <div class="product-info__meta">
+        <div class="rating-row">
+          <span class="stars">${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5-Math.floor(product.rating))}</span>
+          <span class="rating-count">${product.rating} (${product.reviews.toLocaleString('en-IN')} reviews)</span>
+        </div>
+        ${lowStockBadge}
+        <span class="product-info__sku" style="color:var(--gray-400)">SKU: UK-${product.id.toUpperCase()}</span>
+      </div>
+
+      <div class="product-info__price-wrap">
+        <div class="product-info__price">${formatPrice(product.price)}</div>
+        <div class="product-info__price-mrp">MRP: ${formatPrice(product.mrp)}</div>
+        <div class="product-info__price-save">You save: ${formatPrice(product.mrp - product.price)} (${product.discount}% off)</div>
+        <div class="product-info__emi">💳 EMI from ₹${Math.ceil(product.price/12)}/month with major credit cards</div>
+      </div>
+
+      <!-- Problem → Solution -->
+      <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1.25rem;">
+        <p style="font-size:.85rem;font-weight:600;color:#92400e;margin-bottom:.25rem;">😤 ${product.problem}</p>
+        <p style="font-size:.875rem;color:#78350f;">💡 ${product.solution}</p>
+      </div>
+
+      <!-- Delivery info -->
+      <div class="delivery-box">
+        <div class="delivery-box__item"><span>🚚</span><span>Estimated delivery: <strong>${product.deliveryDays} business days</strong></span></div>
+        <div class="delivery-box__item"><span>📦</span><span>Dispatched within <strong>24 hours</strong> of order placement</span></div>
+        <div class="delivery-box__item"><span>🆓</span><span><strong>Free delivery</strong> on this order (above ₹499)</span></div>
+      </div>
+
+      <!-- Pincode check -->
+      <div style="margin-bottom:1.5rem;">
+        <p style="font-size:.875rem;font-weight:600;color:var(--dark);margin-bottom:.5rem;">📍 Check delivery date</p>
+        <div class="pincode-row">
+          <input type="text" id="pincodeInput" class="form-input" placeholder="Enter PIN code" maxlength="6" style="max-width:200px;" />
+          <button class="btn btn-ghost btn-sm" onclick="checkPincode()">Check</button>
+        </div>
+        <p class="pincode-result" id="pincodeResult" style="display:none"></p>
+      </div>
+
+      <!-- COD badge -->
+      ${product.codAvailable ? `
+      <div class="cod-badge" style="margin-bottom:1.25rem;">
+        <span>💵</span>
+        <span>Cash on Delivery available — pay when your order arrives</span>
+      </div>` : ''}
+
+      <!-- Qty + CTA -->
+      <div class="qty-row">
+        <label style="font-size:.875rem;font-weight:600;color:var(--dark);">Quantity:</label>
+        <div class="qty-control">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <input type="number" class="qty-input" id="qtyInput" value="1" min="1" max="${product.stock}" />
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+      </div>
+
+      <div class="product-cta">
+        <button class="btn btn-secondary btn-lg btn-full" onclick="buyNow()">
+          ⚡ Buy Now — ${formatPrice(product.price)}
+        </button>
+        <button class="btn btn-outline btn-lg btn-full" onclick="addToCartPage()">
+          🛒 Add to Cart
+        </button>
+      </div>
+
+      <!-- Trust badges row -->
+      <div class="product-trust-row">
+        <div class="product-trust-item"><span>↩️</span><span>7-Day Returns</span></div>
+        <div class="product-trust-item"><span>🛡️</span><span>1 Year Warranty</span></div>
+        <div class="product-trust-item"><span>🏆</span><span>Genuine Product</span></div>
+        <div class="product-trust-item"><span>📦</span><span>Secure Packaging</span></div>
+      </div>
+
+      <!-- Share -->
+      <div style="display:flex;align-items:center;gap:.75rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--gray-100);">
+        <span style="font-size:.8rem;color:var(--gray-500);font-weight:600;">Share:</span>
+        <a href="https://wa.me/?text=Check+this+out+on+UrbanKart!" target="_blank" rel="noopener" style="font-size:1.3rem;" title="WhatsApp">💬</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" rel="noopener" style="font-size:1.3rem;" title="Facebook">🔵</a>
+        <button onclick="navigator.clipboard.writeText(location.href).then(()=>showToast('Link copied!'))" style="font-size:.8rem;color:var(--primary);font-weight:600;background:none;border:none;cursor:pointer;">📋 Copy Link</button>
+      </div>
+    </div>
+  `;
+
+  /* Populate tabs */
+  document.getElementById('product-tabs').style.display = 'block';
+  document.getElementById('tab-desc-problem').textContent = `😤 The Problem: ${product.problem}`;
+  document.getElementById('tab-desc-solution').textContent = `💡 The Solution: ${product.solution}`;
+  document.getElementById('tab-features').innerHTML = product.features.map(f =>
+    `<div class="product-feature"><span>✅</span><span>${f}</span></div>`
+  ).join('');
+
+  /* Specs table */
+  document.getElementById('spec-table').innerHTML = Object.entries(product.specs).map(([k,v]) =>
+    `<tr><td>${k}</td><td>${v}</td></tr>`
+  ).join('');
+
+  /* Reviews */
+  const reviews = REVIEWS_DATA[product.id] || SAMPLE_REVIEWS;
+  document.getElementById('reviews-content').innerHTML = `
+    <div class="reviews-summary">
+      <div class="reviews-big-rating">
+        <div class="reviews-big-num">${product.rating}</div>
+        <div class="reviews-big-stars">${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5-Math.floor(product.rating))}</div>
+        <div class="reviews-big-count">${product.reviews.toLocaleString('en-IN')} reviews</div>
+      </div>
+      <div class="reviews-bars">${renderRatingBars(product.rating, product.reviews)}</div>
+    </div>
+    ${reviews.map(renderReviewCard).join('')}
+  `;
+
+  /* Related products */
+  const related = PRODUCTS.filter(p => p.id !== product.id && p.categorySlug === product.categorySlug)
+    .concat(PRODUCTS.filter(p => p.id !== product.id && p.isBestseller))
+    .filter((p, i, arr) => arr.findIndex(x => x.id === p.id) === i)
+    .slice(0, 4);
+
+  if (related.length) {
+    document.getElementById('related-wrap').style.display = 'block';
+    const grid = document.getElementById('related-grid');
+    grid.innerHTML = related.map(renderProductCard).join('');
+    grid.querySelectorAll('.product-card__wishlist').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        btn.classList.toggle('wished');
+        btn.textContent = btn.classList.contains('wished') ? '❤️' : '🤍';
+        showToast(btn.classList.contains('wished') ? 'Added to wishlist ❤️' : 'Removed from wishlist');
+      });
+    });
+  }
+
+  /* Store current product ref globally */
+  window._currentProduct = product;
+}
+
+function getQty() {
+  return parseInt(document.getElementById('qtyInput')?.value) || 1;
+}
+
+function changeQty(delta) {
+  const input = document.getElementById('qtyInput');
+  const p = window._currentProduct;
+  const newVal = Math.max(1, Math.min(p.stock, (parseInt(input.value) || 1) + delta));
+  input.value = newVal;
+}
+
+function addToCartPage() {
+  const p = window._currentProduct;
+  addToCart({ id: p.id, name: p.shortName, price: p.price, image: p.images[0] }, getQty());
+}
+
+function buyNow() {
+  addToCartPage();
+  window.location.href = 'checkout.html';
+}
+
+function checkPincode() {
+  const pin = document.getElementById('pincodeInput').value;
+  const res = document.getElementById('pincodeResult');
+  if (pin.length !== 6 || isNaN(pin)) {
+    res.style.display = 'block';
+    res.style.color = 'var(--danger)';
+    res.textContent = 'Please enter a valid 6-digit PIN code.';
+    return;
+  }
+  res.style.display = 'block';
+  res.style.color = 'var(--success)';
+  const p = window._currentProduct;
+  res.textContent = `✅ Delivery to ${pin} in ${p.deliveryDays} business days. COD available!`;
+}
+
+document.addEventListener('DOMContentLoaded', loadProduct);
+</script>
+</body>
+</html>

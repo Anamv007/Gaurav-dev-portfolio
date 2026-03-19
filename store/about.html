@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — UrbanKart | Smart Home Gadgets India</title>
+  <meta name="description" content="Learn about UrbanKart — India's trusted smart home gadget brand started by Vikram & Meena Singh in Gurugram. Our mission: make every Indian home smarter." />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>" />
+  <style>
+    .about-hero { background:linear-gradient(135deg,#0f172a,#1a3a6b); color:white; padding:5rem 0 4rem; }
+    .about-hero h1 { color:white; margin-bottom:1rem; }
+    .about-hero p { color:rgba(255,255,255,.75); font-size:1.1rem; max-width:600px; line-height:1.75; }
+    .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+    @media(max-width:768px) { .team-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:480px) { .team-grid { grid-template-columns:1fr; } }
+    .team-card { background:white; border-radius:var(--radius); border:1px solid var(--gray-100); overflow:hidden; box-shadow:var(--shadow-sm); text-align:center; transition:all var(--transition); }
+    .team-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); }
+    .team-card__img { width:100%; aspect-ratio:1/1; object-fit:cover; background:var(--gray-50); }
+    .team-card__body { padding:1.25rem; }
+    .team-card__name { font-weight:700; color:var(--dark); margin-bottom:.2rem; }
+    .team-card__role { font-size:.8rem; color:var(--primary); font-weight:600; text-transform:uppercase; letter-spacing:.06em; margin-bottom:.5rem; }
+    .team-card__bio { font-size:.85rem; color:var(--gray-500); line-height:1.5; }
+    .value-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
+    @media(max-width:600px) { .value-grid { grid-template-columns:1fr; } }
+    .value-card { background:white; border-radius:var(--radius); border:1px solid var(--gray-100); padding:1.75rem; display:flex; gap:1rem; align-items:flex-start; }
+    .value-card__icon { width:52px; height:52px; flex-shrink:0; border-radius:var(--radius-sm); background:var(--primary-light); display:flex; align-items:center; justify-content:center; font-size:1.5rem; }
+    .value-card__title { font-weight:700; color:var(--dark); margin-bottom:.4rem; }
+    .value-card__text { font-size:.875rem; color:var(--gray-500); line-height:1.6; }
+    .milestones { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+    @media(max-width:768px) { .milestones { grid-template-columns:repeat(2,1fr); } }
+    .milestone { text-align:center; padding:2rem 1rem; background:white; border-radius:var(--radius); border:1px solid var(--gray-100); box-shadow:var(--shadow-sm); }
+    .milestone__num { font-size:2.5rem; font-weight:800; color:var(--primary); font-family:var(--font-head); display:block; margin-bottom:.5rem; }
+    .milestone__label { font-size:.875rem; color:var(--gray-500); }
+  </style>
+</head>
+<body>
+
+<div class="trust-strip">
+  <div class="trust-strip__inner">
+    <span class="trust-item"><span>✅</span><span>COD Available</span></span>
+    <span class="trust-item"><span>🚚</span><span>Free Delivery ₹499+</span></span>
+    <span class="trust-item"><span>↩️</span><span>7-Day Returns</span></span>
+    <span class="trust-item"><span>🛡️</span><span>1 Year Warranty</span></span>
+    <span class="trust-item"><span>✅</span><span>COD Available</span></span>
+    <span class="trust-item"><span>🚚</span><span>Free Delivery ₹499+</span></span>
+    <span class="trust-item"><span>↩️</span><span>7-Day Returns</span></span>
+    <span class="trust-item"><span>🛡️</span><span>1 Year Warranty</span></span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <div class="nav__logo-icon">🏠</div>
+      Urban<span>Kart</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="cart.html" class="nav__cart-btn">
+        🛒 Cart <span class="cart-badge" style="display:none">0</span>
+      </a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- About Hero -->
+<section class="about-hero">
+  <div class="container">
+    <nav class="breadcrumb" style="margin-bottom:1.5rem;opacity:.6;">
+      <a href="index.html" style="color:white;">Home</a>
+      <span class="breadcrumb__sep" style="color:rgba(255,255,255,.4);">›</span>
+      <span style="color:white;">About Us</span>
+    </nav>
+    <p style="font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:#93c5fd;margin-bottom:.75rem;">Our Story</p>
+    <h1>Built in India. <br>Made for Indian Homes.</h1>
+    <p>We're not another faceless online store. We're a team of real people who believe every Indian family deserves a smarter, safer home — at a price that doesn't hurt.</p>
+  </div>
+</section>
+
+<!-- Brand Story -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+      <div class="reveal">
+        <p class="section__label">How It Started</p>
+        <h2 class="section__title">The Story Behind UrbanKart</h2>
+        <p style="color:var(--gray-700);line-height:1.85;margin-bottom:1rem;">
+          It started in 2021 when <strong>Vikram Singh</strong>, a software engineer from Gurugram, tried to buy a reliable WiFi security camera for his mother's home in Jaipur. He spent weeks researching — only to receive a cheap, poorly-made camera that stopped working in two months.
+        </p>
+        <p style="color:var(--gray-700);line-height:1.85;margin-bottom:1rem;">
+          Frustrated, he partnered with his wife <strong>Meena</strong>, a product designer, and they started UrbanKart with a simple promise: <em>only sell products we've personally tested and would put in our own home.</em>
+        </p>
+        <p style="color:var(--gray-700);line-height:1.85;margin-bottom:1.5rem;">
+          Three years later, we've helped 50,000+ Indian families make their homes smarter — and we're just getting started.
+        </p>
+        <div style="background:#eff6ff;border-radius:var(--radius);padding:1.25rem;border-left:4px solid var(--primary);">
+          <p style="font-style:italic;color:var(--dark);font-size:.95rem;line-height:1.7;">
+            "We don't just sell gadgets. We sell confidence — the confidence of knowing your home is safe, your family is comfortable, and you got a fair deal."
+          </p>
+          <p style="font-size:.82rem;font-weight:600;color:var(--primary);margin-top:.5rem;">— Vikram Singh, Co-founder & CEO</p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=700&q=80" alt="UrbanKart office" style="border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);width:100%;height:420px;object-fit:cover;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Milestones -->
+<section class="section" style="background:var(--gray-50);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:2.5rem;">
+      <p class="section__label">By the Numbers</p>
+      <h2 class="section__title">Our Journey So Far</h2>
+    </div>
+    <div class="milestones">
+      <div class="milestone reveal">
+        <span class="milestone__num">50K+</span>
+        <span class="milestone__label">Happy Customers</span>
+      </div>
+      <div class="milestone reveal reveal-delay-1">
+        <span class="milestone__num">4.8★</span>
+        <span class="milestone__label">Average Rating</span>
+      </div>
+      <div class="milestone reveal reveal-delay-2">
+        <span class="milestone__num">19K+</span>
+        <span class="milestone__label">Pincodes Served</span>
+      </div>
+      <div class="milestone reveal reveal-delay-3">
+        <span class="milestone__num">30+</span>
+        <span class="milestone__label">Products Tested & Sold</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Values -->
+<section class="section">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:2.5rem;">
+      <p class="section__label">What We Stand For</p>
+      <h2 class="section__title">Our Core Values</h2>
+    </div>
+    <div class="value-grid">
+      <div class="value-card reveal">
+        <div class="value-card__icon">🔍</div>
+        <div>
+          <h4 class="value-card__title">Ruthless Quality Control</h4>
+          <p class="value-card__text">Every product goes through 30 days of internal testing. If it doesn't pass our standards in our own homes, it doesn't go on the website. Simple.</p>
+        </div>
+      </div>
+      <div class="value-card reveal reveal-delay-1">
+        <div class="value-card__icon">🤝</div>
+        <div>
+          <h4 class="value-card__title">Radical Transparency</h4>
+          <p class="value-card__text">We show honest reviews — including the negative ones. We display real specs, real prices, and real delivery estimates. No tricks.</p>
+        </div>
+      </div>
+      <div class="value-card reveal">
+        <div class="value-card__icon">🇮🇳</div>
+        <div>
+          <h4 class="value-card__title">Made for India</h4>
+          <p class="value-card__text">COD, Hindi support, monsoon-proof products, IST working hours. We're built for India's unique needs — not copy-pasted from a western playbook.</p>
+        </div>
+      </div>
+      <div class="value-card reveal reveal-delay-1">
+        <div class="value-card__icon">💚</div>
+        <div>
+          <h4 class="value-card__title">Responsible Business</h4>
+          <p class="value-card__text">We use recycled packaging, offset our carbon footprint, and donate 1% of profits to rural electrification projects across India.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section" style="background:var(--gray-50);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:2.5rem;">
+      <p class="section__label">Real People. Real Passion.</p>
+      <h2 class="section__title">Meet the Team</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <img class="team-card__img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Vikram Singh" />
+        <div class="team-card__body">
+          <h4 class="team-card__name">Vikram Singh</h4>
+          <p class="team-card__role">Co-founder & CEO</p>
+          <p class="team-card__bio">Ex-Google engineer. Smart home enthusiast. Father of two. Obsessed with making technology accessible to every Indian family.</p>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-1">
+        <img class="team-card__img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Meena Singh" />
+        <div class="team-card__body">
+          <h4 class="team-card__name">Meena Singh</h4>
+          <p class="team-card__role">Co-founder & CPO</p>
+          <p class="team-card__bio">Product designer with 8+ years experience. Makes sure every product we sell is intuitive, beautiful, and genuinely useful.</p>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-2">
+        <img class="team-card__img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Arjun Kapoor" />
+        <div class="team-card__body">
+          <h4 class="team-card__name">Arjun Kapoor</h4>
+          <p class="team-card__role">Head of Operations</p>
+          <p class="team-card__bio">Manages our warehouse in Gurugram and supply chain. Makes sure your order reaches you on time, every time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:linear-gradient(135deg,var(--primary),#1d4ed8);color:white;padding:4rem 0;text-align:center;">
+  <div class="container">
+    <h2 style="color:white;margin-bottom:.75rem;">Ready to Make Your Home Smarter?</h2>
+    <p style="color:rgba(255,255,255,.8);margin-bottom:1.75rem;font-size:1rem;">Browse our handpicked collection of smart home gadgets — all tested, all trusted.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="products.html" class="btn btn-secondary btn-lg">Shop Now →</a>
+      <a href="contact.html" class="btn" style="background:rgba(255,255,255,.15);color:white;border:2px solid rgba(255,255,255,.3);padding:.85rem 2rem;border-radius:var(--radius-sm);font-weight:600;font-size:1.05rem;">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">Urban<span>Kart</span></div>
+        <p class="footer__tagline">Smart Homes. Smart Living.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link">📸</a>
+          <a href="#" class="footer__social-link">▶️</a>
+          <a href="#" class="footer__social-link">💬</a>
+        </div>
+        <p style="font-size:.75rem;color:rgba(255,255,255,.35);margin-top:1rem;">GST No: 06ABCDE1234F1Z5</p>
+      </div>
+      <div>
+        <p class="footer__col-title">Quick Links</p>
+        <div class="footer__links">
+          <a href="products.html">All Products</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Policies</p>
+        <div class="footer__links">
+          <a href="#">Shipping Policy</a>
+          <a href="#">Return Policy</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Contact Us</p>
+        <div class="footer__contact-item"><span class="footer__contact-icon">📍</span><span>42, Cyber Hub, Sector 24,<br>Gurugram, Haryana 122002</span></div>
+        <div class="footer__contact-item"><span class="footer__contact-icon">📞</span><a href="tel:+919876543210" style="color:rgba(255,255,255,.6);">+91-98765-43210</a></div>
+        <div class="footer__contact-item"><span class="footer__contact-icon">✉️</span><a href="mailto:hello@urbankart.in" style="color:rgba(255,255,255,.6);">hello@urbankart.in</a></div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__bottom-text">© 2024 UrbanKart Pvt. Ltd. All rights reserved.</p>
+      <div class="footer__payments">
+        <span class="payment-icon">COD</span>
+        <span class="payment-icon">UPI</span>
+        <span class="payment-icon">Razorpay</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>
