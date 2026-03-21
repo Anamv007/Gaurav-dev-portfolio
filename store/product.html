@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Product — UrbanKart Smart Home Gadgets India</title>
+  <meta name="description" id="page-desc" content="Buy smart home gadgets online India. COD available." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/shop.css" />
+</head>
+<body>
+
+<div class="announcement-bar">🎉 <strong>SALE:</strong> Up to 57% OFF &nbsp;|&nbsp; COD Available &nbsp;|&nbsp; <a href="products.html">See All Deals →</a></div>
+
+<div class="trust-strip">
+  <div class="trust-strip__inner">
+    <span class="trust-strip__item">✅ <span>Cash on Delivery</span></span>
+    <span class="trust-strip__item">🚚 <span>Free Delivery ₹499+</span></span>
+    <span class="trust-strip__item">↩️ <span>7-Day Returns</span></span>
+    <span class="trust-strip__item">🛡️ <span>1-Year Warranty</span></span>
+    <span class="trust-strip__item">✅ <span>Cash on Delivery</span></span>
+    <span class="trust-strip__item">🚚 <span>Free Delivery ₹499+</span></span>
+    <span class="trust-strip__item">↩️ <span>7-Day Returns</span></span>
+    <span class="trust-strip__item">🛡️ <span>1-Year Warranty</span></span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo"><div class="nav__logo-icon">🏠</div>Urban<span>Kart</span></a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Shop All</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__icon-btn" data-search-open>🔍</button>
+      <a href="cart.html" class="nav__cart-btn">🛒 Cart <span class="cart-badge" style="display:none">0</span></a>
+      <button class="nav__burger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Breadcrumb + Product Detail -->
+<div class="container" style="padding-top:1.5rem;padding-bottom:3rem;">
+  <nav class="breadcrumb" id="breadcrumb" style="margin-bottom:1rem;">
+    <a href="index.html">Home</a><span>/</span>
+    <a href="products.html">Shop</a><span>/</span>
+    <span id="bread-name">Product</span>
+  </nav>
+
+  <!-- Product not found -->
+  <div id="product-not-found" style="display:none;" class="empty-state">
+    <div class="empty-state__icon">😕</div>
+    <h3>Product Not Found</h3>
+    <p>This product doesn't exist or may have been removed.</p>
+    <a href="products.html" class="btn btn-primary" style="margin-top:1rem;">← Browse All Products</a>
+  </div>
+
+  <!-- Product detail -->
+  <div id="product-detail" style="display:none;">
+    <div class="product-detail-grid">
+      <!-- Gallery -->
+      <div class="gallery">
+        <div class="gallery__main" id="gallery-main">
+          <img id="gallery-main-img" src="" alt="" />
+          <div class="gallery__badge" id="gallery-badge"></div>
+        </div>
+        <div class="gallery__thumbs" id="gallery-thumbs"></div>
+      </div>
+
+      <!-- Info -->
+      <div class="product-info" id="product-info">
+        <!-- populated by JS -->
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div style="margin-top:3rem;">
+      <div style="display:flex;border-bottom:2px solid var(--gray-200);gap:0;margin-bottom:1.5rem;" id="tabs">
+        <button class="tab-btn active" data-tab="features" onclick="switchTab('features',this)" style="padding:.75rem 1.5rem;background:none;border:none;font-weight:800;font-size:.9rem;color:var(--primary);border-bottom:2px solid var(--primary);margin-bottom:-2px;cursor:pointer;">Features</button>
+        <button class="tab-btn" data-tab="specs" onclick="switchTab('specs',this)" style="padding:.75rem 1.5rem;background:none;border:none;font-weight:700;font-size:.9rem;color:var(--gray-500);cursor:pointer;">Specifications</button>
+        <button class="tab-btn" data-tab="reviews" onclick="switchTab('reviews',this)" style="padding:.75rem 1.5rem;background:none;border:none;font-weight:700;font-size:.9rem;color:var(--gray-500);cursor:pointer;" id="reviews-tab">Reviews</button>
+      </div>
+
+      <div id="tab-features">
+        <div class="features-list" id="features-list"></div>
+      </div>
+      <div id="tab-specs" style="display:none;">
+        <table class="specs-table" id="specs-table"></table>
+      </div>
+      <div id="tab-reviews" style="display:none;">
+        <!-- Reviews Summary -->
+        <div class="reviews-summary" style="margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--gray-200);">
+          <div class="reviews-big-score">
+            <div class="reviews-big-score__num" id="rev-score"></div>
+            <div class="reviews-big-score__stars" id="rev-stars"></div>
+            <div class="reviews-big-score__count" id="rev-count"></div>
+          </div>
+          <div class="reviews-bars" id="rev-bars"></div>
+        </div>
+        <div id="reviews-list"></div>
+      </div>
+    </div>
+
+    <!-- Related Products -->
+    <div style="margin-top:3.5rem;">
+      <div class="section-header" style="margin-bottom:1.5rem;">
+        <h3>You May Also Like</h3>
+        <a href="products.html" class="btn btn-outline btn-sm">View All →</a>
+      </div>
+      <div class="products-grid" id="related-grid"></div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">Urban<span>Kart</span></div>
+        <p class="footer__tagline">India's trusted smart home gadget store.</p>
+      </div>
+      <div><div class="footer__col-title">Shop</div><div class="footer__links"><a href="products.html">All Products</a></div></div>
+      <div><div class="footer__col-title">Company</div><div class="footer__links"><a href="about.html">About Us</a><a href="contact.html">Contact</a></div></div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__contact-item"><span>📞</span><div><strong>+91-98205-67341</strong></div></div>
+        <div class="footer__gst">GSTIN: 06AADCU9999R1ZW</div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2025 UrbanKart. All rights reserved. 🇮🇳</div>
+      <div class="footer__payments">
+        <span class="footer__payment-badge">COD</span>
+        <span class="footer__payment-badge">UPI</span>
+        <span class="footer__payment-badge">RAZORPAY</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top">↑</button>
+<a class="whatsapp-float" href="https://wa.me/919820567341" target="_blank" rel="noopener">💬</a>
+
+<div class="search-modal" id="searchModal">
+  <div class="search-modal__box">
+    <div class="search-modal__input-wrap">
+      <input class="search-modal__input" type="search" id="searchInput" placeholder="Search products..." autocomplete="off" />
+      <button class="search-modal__close" id="searchClose">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<script src="js/products-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+'use strict';
+
+let _product  = null;
+let _qty      = 1;
+let _mainImgs = [];
+
+/* ── Load product from URL ── */
+function loadProduct() {
+  const params = new URLSearchParams(window.location.search);
+  const id     = params.get('id');
+  const p      = getProductById(id);
+
+  if (!p) {
+    document.getElementById('product-not-found').style.display = 'block';
+    return;
+  }
+  _product  = p;
+  _mainImgs = p.images;
+
+  // Page meta
+  document.title = p.name + ' — UrbanKart';
+  document.getElementById('page-desc').content = `Buy ${p.shortName} online India. ${formatPrice(p.price)} only. COD available. Free delivery.`;
+
+  // Breadcrumb
+  document.getElementById('bread-name').textContent = p.shortName;
+
+  // Show product
+  document.getElementById('product-detail').style.display = 'block';
+
+  renderGallery(p);
+  renderInfo(p);
+  renderFeatures(p);
+  renderSpecs(p);
+  renderReviews(p);
+  renderRelated(p);
+}
+
+/* ── Gallery ── */
+function renderGallery(p) {
+  const mainImg  = document.getElementById('gallery-main-img');
+  const badge    = document.getElementById('gallery-badge');
+  const thumbsEl = document.getElementById('gallery-thumbs');
+
+  mainImg.src = p.images[0];
+  mainImg.alt = p.name;
+  badge.textContent = p.discount ? `-${p.discount}%` : '';
+
+  thumbsEl.innerHTML = p.images.map((src, i) => `
+    <div class="gallery__thumb ${i === 0 ? 'active' : ''}" onclick="setMainImg(this,'${src}')">
+      <img src="${src}" alt="${p.shortName} view ${i + 1}" loading="lazy" />
+    </div>`).join('');
+}
+
+function setMainImg(thumb, src) {
+  document.getElementById('gallery-main-img').src = src;
+  document.querySelectorAll('.gallery__thumb').forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+}
+
+/* ── Product Info ── */
+function renderInfo(p) {
+  const saving = p.mrp - p.price;
+  const infoEl = document.getElementById('product-info');
+
+  infoEl.innerHTML = `
+    <div class="product-info__category">${p.category}</div>
+    <h1 class="product-info__title">${p.name}</h1>
+
+    <div class="product-info__rating-row">
+      <span class="stars">${renderStars(p.rating)}</span>
+      <strong style="font-size:.9rem;">${p.rating}</strong>
+      <span class="product-info__review-count" onclick="switchTab('reviews',document.querySelector('[data-tab=reviews]'))">(${p.reviews.toLocaleString('en-IN')} reviews)</span>
+      <span class="product-info__sold">|&nbsp; ${(p.sold).toLocaleString('en-IN')} sold</span>
+    </div>
+
+    <div class="product-info__price">
+      <span class="product-info__current">${formatPrice(p.price)}</span>
+      <span class="product-info__mrp">${formatPrice(p.mrp)}</span>
+      <span class="product-info__off">You save ${formatPrice(saving)} (${p.discount}%)</span>
+    </div>
+    <div class="product-info__gst">Inclusive of all taxes. GST invoice included.</div>
+
+    <!-- Problem → Solution -->
+    <div class="problem-solution">
+      <div class="problem-solution__label">😤 The Problem You're Solving</div>
+      <div class="problem-solution__text">${escapeHtml(p.problem)}</div>
+    </div>
+    <div class="problem-solution" style="background:#f0fdf4;border-color:var(--success);">
+      <div class="problem-solution__label" style="color:var(--success);">✅ How This Product Solves It</div>
+      <div class="problem-solution__text">${escapeHtml(p.solution)}</div>
+    </div>
+
+    <!-- Stock -->
+    ${p.lowStock ? `
+    <div>
+      <div class="stock-label" style="margin-bottom:.3rem;">⚡ Only ${p.stock} units left — selling fast!</div>
+      <div class="stock-bar"><div class="stock-bar__fill" style="width:${Math.round((p.stock/100)*100)}%;"></div></div>
+    </div>` : '<div style="font-size:.82rem;color:var(--success);font-weight:700;">✅ In Stock — Ready to Ship</div>'}
+
+    <!-- COD + Delivery -->
+    <div class="cod-delivery-box">
+      <div class="cod-badge">
+        <span style="font-size:1.5rem;">💵</span>
+        <div><strong>Cash on Delivery</strong><small>Pay when delivered</small></div>
+      </div>
+      <div class="delivery-badge">
+        <span style="font-size:1.5rem;">🚚</span>
+        <div><strong>Free Delivery</strong><small>Delivered in ${p.deliveryDays} days</small></div>
+      </div>
+    </div>
+
+    <!-- Qty + Add to Cart -->
+    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:.75rem;font-weight:700;color:var(--gray-500);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.07em;">Quantity</div>
+        <div class="qty-control">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <span class="qty-display" id="qty-display">1</span>
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+      </div>
+      <div style="flex:1;min-width:180px;">
+        <button class="btn btn-primary btn-lg btn-full" onclick="addProductToCart()" style="margin-bottom:.5rem;">🛒 Add to Cart — ${formatPrice(p.price)}</button>
+        <button class="btn btn-accent btn-lg btn-full" onclick="buyNow()">⚡ Buy Now</button>
+      </div>
+    </div>
+
+    <!-- Trust line -->
+    <div style="font-size:.78rem;color:var(--gray-500);display:flex;gap:1rem;flex-wrap:wrap;padding:.75rem 0;border-top:1px solid var(--gray-100);">
+      <span>↩️ 7-Day Return</span>
+      <span>🛡️ 1-Year Warranty</span>
+      <span>🏛️ GST Invoice</span>
+      <span>✅ BIS Certified</span>
+    </div>
+
+    <!-- WhatsApp CTA -->
+    <a href="https://wa.me/919820567341?text=Hi%20UrbanKart!%20I%20have%20a%20question%20about%20${encodeURIComponent(p.shortName)}" target="_blank" rel="noopener"
+      class="btn btn-ghost btn-sm"
+      style="width:100%;justify-content:center;gap:.5rem;">
+      💬 Have a question? Ask us on WhatsApp
+    </a>`;
+}
+
+function changeQty(delta) {
+  _qty = Math.max(1, Math.min(20, _qty + delta));
+  document.getElementById('qty-display').textContent = _qty;
+}
+
+function addProductToCart() {
+  if (!_product) return;
+  handleAddToCart(_product.id, _qty);
+}
+
+function buyNow() {
+  if (!_product) return;
+  addToCart(_product.id, _qty);
+  window.location.href = 'cart.html';
+}
+
+/* ── Features ── */
+function renderFeatures(p) {
+  document.getElementById('features-list').innerHTML =
+    p.features.map(f => `<div class="feature-item">${escapeHtml(f)}</div>`).join('');
+}
+
+/* ── Specs ── */
+function renderSpecs(p) {
+  document.getElementById('specs-table').innerHTML =
+    Object.entries(p.specs).map(([k, v]) =>
+      `<tr><td>${escapeHtml(k)}</td><td>${escapeHtml(String(v))}</td></tr>`
+    ).join('');
+}
+
+/* ── Reviews ── */
+function renderReviews(p) {
+  // Update tab label
+  document.getElementById('reviews-tab').textContent = `Reviews (${p.reviews.toLocaleString('en-IN')})`;
+
+  // Big score
+  document.getElementById('rev-score').textContent = p.rating;
+  document.getElementById('rev-stars').innerHTML = `<span style="color:#f59e0b;">${'★'.repeat(5)}</span>`;
+  document.getElementById('rev-count').textContent = `${p.reviews.toLocaleString('en-IN')} verified reviews`;
+
+  // Fake distribution based on rating
+  const pct5 = Math.round(p.rating * 15);
+  const pct4 = Math.round((5 - p.rating) * 8 + 10);
+  const pct3 = Math.round((5 - p.rating) * 5);
+  const pct2 = Math.round((5 - p.rating) * 3);
+  const pct1 = 100 - pct5 - pct4 - pct3 - pct2;
+
+  document.getElementById('rev-bars').innerHTML = [
+    [5, pct5], [4, pct4], [3, pct3], [2, pct2], [1, Math.max(0, pct1)]
+  ].map(([star, pct]) => `
+    <div class="review-bar-row">
+      <span>${star}★</span>
+      <div class="review-bar-track"><div class="review-bar-fill" style="width:${pct}%"></div></div>
+      <span>${pct}%</span>
+    </div>`).join('');
+
+  // Review cards
+  document.getElementById('reviews-list').innerHTML =
+    p.reviewList.map(r => `
+      <div class="review-card">
+        <div class="review-card__header">
+          <div style="display:flex;gap:.75rem;align-items:flex-start;">
+            <div class="review-card__avatar">${r.name[0]}</div>
+            <div>
+              <div class="review-card__name">${escapeHtml(r.name)}</div>
+              <div class="review-card__meta">📍 ${escapeHtml(r.city)} &nbsp;·&nbsp; <span style="color:#f59e0b;">${'★'.repeat(r.rating)}</span> &nbsp;·&nbsp; ${escapeHtml(r.date)}</div>
+              ${r.verified ? '<div class="review-card__verified">✅ Verified Purchase</div>' : ''}
+            </div>
+          </div>
+        </div>
+        <div style="font-weight:800;font-size:.9rem;color:var(--dark);margin-bottom:.5rem;">"${escapeHtml(r.title)}"</div>
+        <div class="review-card__body">${escapeHtml(r.body)}</div>
+        <div class="review-card__helpful">👍 ${r.helpful} people found this helpful</div>
+      </div>`).join('');
+}
+
+/* ── Related ── */
+function renderRelated(p) {
+  const related = PRODUCTS.filter(x => x.id !== p.id).slice(0, 4);
+  document.getElementById('related-grid').innerHTML = related.map(r => productCardHTML(r)).join('');
+  initWishlist();
+}
+
+/* ── Tabs ── */
+function switchTab(tab, el) {
+  ['features','specs','reviews'].forEach(t => {
+    document.getElementById('tab-' + t).style.display = t === tab ? 'block' : 'none';
+  });
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    const active = b.dataset.tab === tab;
+    b.style.color        = active ? 'var(--primary)' : 'var(--gray-500)';
+    b.style.fontWeight   = active ? '800' : '700';
+    b.style.borderBottom = active ? '2px solid var(--primary)' : 'none';
+    b.style.marginBottom = active ? '-2px' : '0';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', loadProduct);
+</script>
+</body>
+</html>

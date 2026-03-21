@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — UrbanKart Smart Home India</title>
+  <meta name="description" content="Contact UrbanKart for product queries, orders, returns, and support. WhatsApp, email or call. Average response under 15 minutes." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/shop.css" />
+</head>
+<body>
+
+<div class="announcement-bar">📞 Need help? WhatsApp us at <strong>+91-98205-67341</strong> — avg reply in 15 mins! &nbsp;|&nbsp; <a href="products.html">Shop Now →</a></div>
+
+<div class="trust-strip">
+  <div class="trust-strip__inner">
+    <span class="trust-strip__item">✅ <span>Cash on Delivery</span></span>
+    <span class="trust-strip__item">🚚 <span>Free Delivery ₹499+</span></span>
+    <span class="trust-strip__item">↩️ <span>7-Day Returns</span></span>
+    <span class="trust-strip__item">🛡️ <span>1-Year Warranty</span></span>
+    <span class="trust-strip__item">✅ <span>Cash on Delivery</span></span>
+    <span class="trust-strip__item">🚚 <span>Free Delivery ₹499+</span></span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo"><div class="nav__logo-icon">🏠</div>Urban<span>Kart</span></a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Shop All</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button class="nav__icon-btn" data-search-open>🔍</button>
+      <a href="cart.html" class="nav__cart-btn">🛒 Cart <span class="cart-badge" style="display:none">0</span></a>
+      <button class="nav__burger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" style="color:rgba(255,255,255,.5);padding:.5rem 0 .75rem;">
+      <a href="index.html" style="color:rgba(255,255,255,.5);">Home</a><span>/</span><span style="color:white;">Contact Us</span>
+    </nav>
+    <h1>We're Here to Help 💬</h1>
+    <p>Average WhatsApp response in under 15 minutes. Real people, not bots.</p>
+  </div>
+</div>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="contact-layout">
+      <!-- Form -->
+      <div>
+        <div class="card">
+          <div class="card-header">📝 Send Us a Message</div>
+          <div class="card-body">
+            <form id="contact-form" novalidate>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="c-name">Your Name *</label>
+                  <input class="form-input" id="c-name" name="name" type="text" placeholder="Rahul Sharma" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="c-phone">Phone Number *</label>
+                  <input class="form-input" id="c-phone" name="phone" type="tel" placeholder="9820567341" maxlength="10" required />
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label class="form-label" for="c-email">Email Address</label>
+                <input class="form-input" id="c-email" name="email" type="email" placeholder="rahul@example.com" />
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label class="form-label" for="c-subject">Subject *</label>
+                <select class="form-input" id="c-subject" name="subject" required>
+                  <option value="">Select a topic…</option>
+                  <option value="order">Order Status / Tracking</option>
+                  <option value="return">Return / Refund</option>
+                  <option value="product">Product Query</option>
+                  <option value="warranty">Warranty Claim</option>
+                  <option value="bulk">Bulk / Corporate Order</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label class="form-label" for="c-order">Order ID (if applicable)</label>
+                <input class="form-input" id="c-order" name="orderid" type="text" placeholder="e.g. UK12345678" />
+              </div>
+              <div class="form-group" style="margin-bottom:1.5rem;">
+                <label class="form-label" for="c-message">Message *</label>
+                <textarea class="form-input" id="c-message" name="message" rows="5" placeholder="Please describe your query in detail so we can help you faster…" style="resize:vertical;" required></textarea>
+              </div>
+              <div id="contact-success" style="display:none;background:var(--success-light);border:1px solid #bbf7d0;border-radius:var(--radius-sm);padding:1rem;color:var(--success);font-weight:700;margin-bottom:1rem;font-size:.9rem;">
+                ✅ Your message has been sent! We'll respond within 2 hours (usually much faster via WhatsApp).
+              </div>
+              <button class="btn btn-primary btn-lg btn-full" type="submit">Send Message →</button>
+              <p style="font-size:.78rem;color:var(--gray-500);margin-top:.75rem;text-align:center;">Or contact us directly on WhatsApp for the fastest response.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Sidebar -->
+      <div>
+        <!-- WhatsApp CTA -->
+        <div style="background:linear-gradient(135deg,#065f46,#059669);border-radius:var(--radius-lg);padding:1.75rem;margin-bottom:1.25rem;color:white;">
+          <div style="font-size:2.5rem;text-align:center;margin-bottom:.75rem;">💬</div>
+          <h3 style="text-align:center;color:white;margin-bottom:.5rem;font-size:1.1rem;">WhatsApp Us — Fastest!</h3>
+          <p style="font-size:.85rem;color:rgba(255,255,255,.8);text-align:center;margin-bottom:1rem;">Average response in under 15 minutes during business hours. Evenings may take up to 2 hours.</p>
+          <a href="https://wa.me/919820567341?text=Hi%20UrbanKart!%20I%20need%20help%20with%20my%20order." target="_blank" rel="noopener"
+            class="btn" style="width:100%;justify-content:center;background:white;color:#065f46;font-weight:900;">
+            💬 Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="contact-info-card">
+          <div class="contact-info-card__icon">📞</div>
+          <div>
+            <div class="contact-info-card__title">Phone Support</div>
+            <div class="contact-info-card__detail">
+              <a href="tel:+919820567341">+91-98205-67341</a><br />
+              Mon–Sat, 9AM–7PM IST<br />
+              <span style="font-size:.72rem;color:var(--gray-400);">Avg wait: under 2 minutes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-info-card__icon">✉️</div>
+          <div>
+            <div class="contact-info-card__title">Email Support</div>
+            <div class="contact-info-card__detail">
+              <a href="mailto:support@urbankart.in">support@urbankart.in</a><br />
+              We reply within 2 hours<br />
+              <span style="font-size:.72rem;color:var(--gray-400);">Include your Order ID for faster help</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-info-card__icon">📍</div>
+          <div>
+            <div class="contact-info-card__title">Office Address</div>
+            <div class="contact-info-card__detail">
+              UrbanKart Technologies Pvt. Ltd.<br />
+              Tower B, Vatika City Point,<br />
+              MG Road, Gurugram — 122003<br />
+              Haryana, India
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-info-card__icon">🏛️</div>
+          <div>
+            <div class="contact-info-card__title">GST & Legal</div>
+            <div class="contact-info-card__detail">
+              GSTIN: 06AADCU9999R1ZW<br />
+              CIN: U74999HR2021PTC099991<br />
+              <span style="font-size:.72rem;color:var(--gray-400);">GST invoice provided with every order</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div class="card" style="margin-top:.25rem;">
+          <div class="card-body">
+            <div style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray-500);margin-bottom:.75rem;">Support Hours</div>
+            <div style="font-size:.85rem;color:var(--gray-600);display:flex;flex-direction:column;gap:.4rem;">
+              <div style="display:flex;justify-content:space-between;"><span>Mon – Fri</span><strong>9:00 AM – 7:00 PM</strong></div>
+              <div style="display:flex;justify-content:space-between;"><span>Saturday</span><strong>10:00 AM – 5:00 PM</strong></div>
+              <div style="display:flex;justify-content:space-between;"><span>Sunday</span><strong>WhatsApp only</strong></div>
+            </div>
+            <div style="margin-top:.75rem;font-size:.75rem;color:var(--gray-400);">All times IST. WhatsApp available 24×7 (slower response at night).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ quick links -->
+<section class="section" style="background:var(--gray-50);">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:2rem;">
+      <span class="section__eyebrow">Self-Help</span>
+      <h2>Common Questions</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;" class="faq-quick-grid">
+      <div class="faq-quick">
+        <div style="font-size:1.5rem;margin-bottom:.5rem;">🚚</div>
+        <h4>Track My Order</h4>
+        <p>Received a tracking link via SMS? Click it to see live delivery status. Or WhatsApp us your Order ID for updates.</p>
+      </div>
+      <div class="faq-quick">
+        <div style="font-size:1.5rem;margin-bottom:.5rem;">↩️</div>
+        <h4>Return / Refund</h4>
+        <p>Unhappy with your order? WhatsApp us within 7 days of delivery. We'll arrange free pickup and full refund in 3–5 business days.</p>
+      </div>
+      <div class="faq-quick">
+        <div style="font-size:1.5rem;margin-bottom:.5rem;">🛡️</div>
+        <h4>Warranty Claim</h4>
+        <p>Product defective? Send a WhatsApp video showing the issue. We'll troubleshoot first, then replace if needed — all free of charge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">Urban<span>Kart</span></div>
+        <p class="footer__tagline">India's trusted smart home gadget store.</p>
+        <div class="footer__socials" style="margin-top:1rem;">
+          <a class="footer__social" href="#">📸</a>
+          <a class="footer__social" href="#">👤</a>
+          <a class="footer__social" href="https://wa.me/919820567341">💬</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Shop</div>
+        <div class="footer__links"><a href="products.html">All Products</a><a href="index.html#bestsellers">Bestsellers</a></div>
+      </div>
+      <div>
+        <div class="footer__col-title">Company</div>
+        <div class="footer__links"><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__contact-item"><span>📞</span><div><strong>+91-98205-67341</strong></div></div>
+        <div class="footer__gst">GSTIN: 06AADCU9999R1ZW</div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2025 UrbanKart Technologies Pvt. Ltd. All rights reserved. 🇮🇳</div>
+      <div class="footer__payments">
+        <span class="footer__payment-badge">COD</span>
+        <span class="footer__payment-badge">UPI</span>
+        <span class="footer__payment-badge">RAZORPAY</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top">↑</button>
+<a class="whatsapp-float" href="https://wa.me/919820567341" target="_blank" rel="noopener">💬</a>
+
+<div class="search-modal" id="searchModal">
+  <div class="search-modal__box">
+    <div class="search-modal__input-wrap">
+      <input class="search-modal__input" type="search" id="searchInput" placeholder="Search products..." autocomplete="off" />
+      <button class="search-modal__close" id="searchClose">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<script src="js/products-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+'use strict';
+document.getElementById('contact-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const name    = document.getElementById('c-name').value.trim();
+  const phone   = document.getElementById('c-phone').value.trim();
+  const subject = document.getElementById('c-subject').value;
+  const message = document.getElementById('c-message').value.trim();
+  let ok = true;
+
+  ['c-name','c-phone','c-subject','c-message'].forEach(id => {
+    const el  = document.getElementById(id);
+    const err = !el.value.trim();
+    el.classList.toggle('error', err);
+    if (err) ok = false;
+  });
+  if (!ok) { showToast('Please fill in all required fields', 'error'); return; }
+  if (!/^[6-9]\d{9}$/.test(phone)) {
+    document.getElementById('c-phone').classList.add('error');
+    showToast('Please enter a valid 10-digit mobile number', 'error'); return;
+  }
+
+  const btn = e.target.querySelector('button[type=submit]');
+  btn.disabled = true; btn.textContent = 'Sending…';
+  setTimeout(() => {
+    document.getElementById('contact-success').style.display = 'block';
+    btn.disabled = false; btn.textContent = 'Send Message →';
+    e.target.reset();
+    showToast('✅ Message sent! We\'ll reply within 2 hours.', 'success');
+  }, 1200);
+});
+</script>
+
+<style>
+@media (max-width: 768px) { .faq-quick-grid { grid-template-columns: 1fr !important; } }
+.faq-quick { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 1.5rem; transition: all var(--transition); }
+.faq-quick:hover { box-shadow: var(--shadow-md); }
+.faq-quick h4 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: .5rem; }
+.faq-quick p { font-size: .85rem; color: var(--gray-500); line-height: 1.7; }
+</style>
+</body>
+</html>
